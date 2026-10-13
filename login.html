@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sign In | Stackly - Heritage Dairy Portal</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/fontawesome-all.css" rel="stylesheet">
+<link href="css/custom-auth.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="images/favicon.webp" type="image/x-icon">
+<link rel="icon" href="images/favicon.webp" type="image/x-icon">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+
+<body class="auth-page-body">
+
+    <div class="auth-card-container">
+        <div class="auth-card">
+            
+            <!-- Header & Logo -->
+            <div class="auth-header">
+                <a href="index.html" class="auth-logo" title="Back to Homepage">
+                    <img src="images/logo.webp" alt="Stackly Logo">
+                </a>
+                <h2 class="auth-title">Welcome to Stackly</h2>
+                <p class="auth-subtitle">Select your role and sign in to access your portal</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" novalidate>
+
+                <!-- Role Selector (3 Roles) -->
+                <div class="role-select-section">
+                    <label class="role-select-label"><i class="fas fa-id-badge"></i> Select Your Access Role:</label>
+                    <div class="role-options-grid">
+                        <label class="role-radio-label">
+                            <input type="radio" name="authRole" value="Admin" checked>
+                            <div class="role-box">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Admin</span>
+                            </div>
+                        </label>
+                        <label class="role-radio-label">
+                            <input type="radio" name="authRole" value="Farmer">
+                            <div class="role-box">
+                                <i class="fas fa-tractor"></i>
+                                <span>Farmer</span>
+                            </div>
+                        </label>
+                        <label class="role-radio-label">
+                            <input type="radio" name="authRole" value="Customer">
+                            <div class="role-box">
+                                <i class="fas fa-shopping-basket"></i>
+                                <span>Customer</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="auth-form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <div class="auth-input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="loginEmail" class="auth-input" placeholder="e.g. manager@hancockfarm.org" required autocomplete="email">
+                    </div>
+                    <div id="emailError" class="auth-field-error">Please enter a valid email address.</div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="auth-form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="auth-input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="loginPassword" class="auth-input" placeholder="Enter secure password" required autocomplete="current-password">
+                        <button type="button" class="toggle-password-btn" id="togglePasswordBtn" title="Toggle visibility">
+                            <i class="fas fa-eye" id="togglePasswordIcon"></i>
+                        </button>
+                    </div>
+                    <div id="passwordError" class="auth-field-error">Password must be at least 8 characters and include uppercase, lowercase, number, and symbol.</div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="auth-submit-btn" id="submitLoginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Sign In to Dashboard
+                </button>
+
+                <!-- Footer Navigation -->
+                <div class="auth-footer-nav">
+                    Don't have an account? <a href="register.html">Register here</a>
+                    <div>
+                        <a href="index.html" class="auth-back-link">
+                            <i class="fas fa-arrow-left"></i> Return to Main Website
+                        </a>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function() {
+    var $emailInput = $('#loginEmail');
+    var $passwordInput = $('#loginPassword');
+    var $toggleBtn = $('#togglePasswordBtn');
+    var $toggleIcon = $('#togglePasswordIcon');
+
+    // Password validation criteria
+    function validatePassword(pwd) {
+        return {
+            length: pwd.length >= 8,
+            upper: /[A-Z]/.test(pwd),
+            lower: /[a-z]/.test(pwd),
+            number: /[0-9]/.test(pwd),
+            symbol: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]/.test(pwd)
+        };
+    }
+
+    function isValidEmail(email) {
+        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    // Toggle password visibility
+    $toggleBtn.on('click', function(e) {
+        e.preventDefault();
+        var currentType = $passwordInput.attr('type');
+        if (currentType === 'password') {
+            $passwordInput.attr('type', 'text');
+            $toggleIcon.removeClass('fa-eye').addClass('fa-eye-slash');
+        } else {
+            $passwordInput.attr('type', 'password');
+            $toggleIcon.removeClass('fa-eye-slash').addClass('fa-eye');
+        }
+    });
+
+    // Real-time password check
+    $passwordInput.on('input', function() {
+        var pwd = $(this).val();
+        var res = validatePassword(pwd);
+
+        if (res.length && res.upper && res.lower && res.number && res.symbol) {
+            $passwordInput.removeClass('is-invalid').addClass('is-valid');
+            $('#passwordError').hide();
+        }
+    });
+
+    // Email live check
+    $emailInput.on('input', function() {
+        var email = $(this).val().trim();
+        if (isValidEmail(email)) {
+            $emailInput.removeClass('is-invalid').addClass('is-valid');
+            $('#emailError').hide();
+        }
+    });
+
+    // Form submission
+    $('#loginForm').on('submit', function(e) {
+        e.preventDefault();
+
+        var email = $emailInput.val().trim();
+        var password = $passwordInput.val();
+        var selectedRole = $('input[name="authRole"]:checked').val() || 'Admin';
+
+        var emailValid = isValidEmail(email);
+        var pwdCheck = validatePassword(password);
+        var pwdValid = pwdCheck.length && pwdCheck.upper && pwdCheck.lower && pwdCheck.number && pwdCheck.symbol;
+
+        var hasError = false;
+
+        if (!emailValid) {
+            $emailInput.addClass('is-invalid').removeClass('is-valid');
+            $('#emailError').show();
+            hasError = true;
+        } else {
+            $emailInput.removeClass('is-invalid').addClass('is-valid');
+            $('#emailError').hide();
+        }
+
+        if (!pwdValid) {
+            $passwordInput.addClass('is-invalid').removeClass('is-valid');
+            $('#passwordError').show();
+            hasError = true;
+        } else {
+            $passwordInput.removeClass('is-invalid').addClass('is-valid');
+            $('#passwordError').hide();
+        }
+
+        if (hasError) {
+            return false;
+        }
+
+        // Store logged in session in localStorage
+        var userData = {
+            email: email,
+            role: selectedRole,
+            name: email.split('@')[0],
+            isLoggedIn: true,
+            loginTime: new Date().toISOString()
+        };
+        localStorage.setItem('hancock_user', JSON.stringify(userData));
+
+        // Feedback & Redirect directly to dashboard
+        $('#submitLoginBtn').html('<i class="fas fa-spinner fa-spin"></i> Logging In...').prop('disabled', true);
+        setTimeout(function() {
+            window.location.href = 'dashboard.html';
+        }, 600);
+    });
+});
+</script>
+
+</body>
+</html>

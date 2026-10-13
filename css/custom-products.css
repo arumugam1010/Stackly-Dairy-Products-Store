@@ -1,0 +1,842 @@
+/* ==========================================================================
+   Custom Styles for Hancock Farm Products Page
+   Additional 5 Content Sections & E-Commerce Enhancements
+   ========================================================================== */
+
+/* Subtitle Badges */
+.sec-subtitle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f7bd00;
+    background: rgba(247, 189, 0, 0.1);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(247, 189, 0, 0.25);
+}
+
+.sec-subtitle-badge.light {
+    color: #f7bd00;
+    background: rgba(247, 189, 0, 0.15);
+    border-color: rgba(247, 189, 0, 0.35);
+}
+
+.sec-title-centered {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 55px auto;
+}
+
+.sec-title-centered h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 16px;
+}
+
+.sec-title-centered .text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #666666;
+    margin: 0;
+}
+
+.sec-title-centered.light h2 {
+    color: #ffffff;
+}
+
+.sec-title-centered.light .text {
+    color: #ded9cf;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 1: Curated Farm Bundles (.product-bundles-section)
+   -------------------------------------------------------------------------- */
+.product-bundles-section {
+    position: relative;
+    padding: 100px 0 90px;
+    background-color: #faf6f0;
+}
+
+.bundle-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid #eee4d5;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 30px);
+}
+
+.bundle-card:hover {
+    transform: translateY(-8px);
+    border-color: #f7bd00;
+    box-shadow: 0 20px 45px rgba(247, 189, 0, 0.16);
+}
+
+.bundle-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f7bd00;
+    color: #222222;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(247, 189, 0, 0.3);
+}
+
+.bundle-badge.popular {
+    background: #2e7d32;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+.bundle-image-box {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    background: #f7f3eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bundle-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.bundle-card:hover .bundle-image-box img {
+    transform: scale(1.06);
+}
+
+.bundle-content {
+    padding: 30px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.bundle-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 10px;
+    line-height: 1.35;
+}
+
+.bundle-content .bundle-desc {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #666666;
+    margin-bottom: 18px;
+}
+
+.bundle-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    border-top: 1px dashed #ebe1d2;
+    border-bottom: 1px dashed #ebe1d2;
+    padding: 14px 0;
+}
+
+.bundle-items-list li {
+    font-size: 13.5px;
+    color: #555555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.bundle-items-list li:last-child {
+    margin-bottom: 0;
+}
+
+.bundle-items-list li i {
+    color: #388e3c;
+    font-size: 13px;
+}
+
+.bundle-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.bundle-pricing {
+    display: flex;
+    flex-direction: column;
+}
+
+.bundle-pricing .current-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #222222;
+    line-height: 1;
+}
+
+.bundle-pricing .old-price {
+    font-size: 14px;
+    color: #999999;
+    text-decoration: line-through;
+    margin-top: 4px;
+}
+
+.bundle-btn {
+    background: #f7bd00;
+    color: #222222;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+}
+
+.bundle-btn:hover {
+    background: #222222;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 2: Nutritional & Purity Comparison (.nutrition-comparison-section)
+   -------------------------------------------------------------------------- */
+.nutrition-comparison-section {
+    position: relative;
+    padding: 100px 0 90px;
+    background: #ffffff;
+}
+
+.comparison-table-wrapper {
+    background: #ffffff;
+    border-radius: 22px;
+    border: 1px solid #ebd9b8;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.comparison-table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: separate;
+}
+
+.comparison-table th {
+    padding: 24px 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid #ebd9b8;
+    vertical-align: middle;
+}
+
+.comparison-table th.col-feature {
+    width: 34%;
+    background: #fbf8f3;
+    color: #222222;
+}
+
+.comparison-table th.col-hancock {
+    width: 36%;
+    background: #fef8e7;
+    color: #8f6a00;
+    border-left: 2px solid #f7bd00;
+    border-right: 2px solid #f7bd00;
+    text-align: center;
+}
+
+.comparison-table th.col-conventional {
+    width: 30%;
+    background: #f4f4f4;
+    color: #666666;
+    text-align: center;
+}
+
+.comparison-table td {
+    padding: 20px 28px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    border-bottom: 1px solid #f0e8dc;
+    vertical-align: middle;
+}
+
+.comparison-table td.col-feature {
+    background: #ffffff;
+    font-weight: 600;
+    color: #222222;
+}
+
+.comparison-table td.col-feature small {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: #888888;
+    margin-top: 3px;
+}
+
+.comparison-table td.col-hancock {
+    background: #fffdf7;
+    color: #1e4620;
+    font-weight: 600;
+    border-left: 2px solid #f7bd00;
+    border-right: 2px solid #f7bd00;
+    text-align: center;
+}
+
+.comparison-table td.col-conventional {
+    background: #fafafa;
+    color: #777777;
+    text-align: center;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.check-icon-good {
+    color: #2e7d32;
+    margin-right: 6px;
+    font-size: 15px;
+}
+
+.cross-icon-bad {
+    color: #c62828;
+    margin-right: 6px;
+    font-size: 14px;
+}
+
+.nutrition-bottom-banner {
+    background: #fbf8f3;
+    border: 1px dashed #ebd9b8;
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nutrition-bottom-text {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nutrition-bottom-text i {
+    font-size: 32px;
+    color: #f7bd00;
+}
+
+.nutrition-bottom-text h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #222222;
+}
+
+.nutrition-bottom-text p {
+    font-size: 14px;
+    margin: 0;
+    color: #666666;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 3: Seasonal Small-Batch Flavors (.seasonal-flavors-section)
+   -------------------------------------------------------------------------- */
+.seasonal-flavors-section {
+    position: relative;
+    padding: 100px 0 90px;
+    background-color: #faf6f0;
+}
+
+.flavor-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid #eee4d5;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 30px);
+}
+
+.flavor-card:hover {
+    transform: translateY(-8px);
+    border-color: #f7bd00;
+    box-shadow: 0 18px 40px rgba(247, 189, 0, 0.14);
+}
+
+.flavor-batch-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(34, 34, 34, 0.85);
+    color: #f7bd00;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.flavor-image-box {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: #fdfbf7;
+}
+
+.flavor-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.flavor-card:hover .flavor-image-box img {
+    transform: scale(1.08);
+}
+
+.flavor-body {
+    padding: 26px 24px 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.flavor-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 10px;
+    line-height: 1.35;
+}
+
+.flavor-notes {
+    font-size: 13.5px;
+    color: #7a6332;
+    background: #fbf5e9;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.flavor-body p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #666666;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.flavor-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    border-top: 1px solid #f2ece1;
+    padding-top: 14px;
+}
+
+.flavor-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.flavor-btn {
+    background: #222222;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 9px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.flavor-btn:hover {
+    background: #f7bd00;
+    color: #222222;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 4: Doorstep Delivery & Glass Bottle Return (.delivery-bottle-section)
+   -------------------------------------------------------------------------- */
+.delivery-bottle-section {
+    position: relative;
+    padding: 105px 0 95px;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.delivery-bottle-section .overlay-dark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 25, 20, 0.93);
+}
+
+.delivery-step-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    padding: 38px 24px 32px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-step-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.13);
+    border-color: #f7bd00;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.delivery-step-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #f7bd00;
+    color: #222222;
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.delivery-step-card .step-icon {
+    font-size: 32px;
+    color: #f7bd00;
+    margin-bottom: 16px;
+}
+
+.delivery-step-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.35;
+}
+
+.delivery-step-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.68;
+    color: #dcd6cc;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.subscription-cta-banner {
+    margin-top: 35px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(247, 189, 0, 0.4);
+    border-radius: 20px;
+    padding: 38px 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.subscription-cta-banner .cta-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.subscription-cta-banner .cta-info p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #ded8cb;
+    margin: 0;
+}
+
+.btn-subscription {
+    background: #f7bd00;
+    color: #222222;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+}
+
+.btn-subscription:hover {
+    background: #ffffff;
+    color: #222222;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 5: Customer Reviews & Verified Ratings (.product-reviews-section)
+   -------------------------------------------------------------------------- */
+.product-reviews-section {
+    position: relative;
+    padding: 100px 0 95px;
+    background-color: #ffffff;
+}
+
+.reviews-summary-bar {
+    background: #fbf8f3;
+    border: 1px solid #ece2d2;
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.rating-score-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.rating-huge-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 800;
+    color: #222222;
+    line-height: 1;
+}
+
+.rating-score-meta .stars {
+    color: #f7bd00;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.rating-score-meta .count {
+    font-size: 14px;
+    color: #666666;
+    font-weight: 600;
+}
+
+.review-badges-group {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.review-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.review-badge-item i {
+    color: #2e7d32;
+    font-size: 18px;
+}
+
+.review-card {
+    background: #fdfbf7;
+    border: 1px solid #ede3d4;
+    border-radius: 18px;
+    padding: 34px 28px;
+    margin-bottom: 30px;
+    transition: all 0.35s ease;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    border-color: #f7bd00;
+    background: #ffffff;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+}
+
+.review-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.review-stars {
+    color: #f7bd00;
+    font-size: 15px;
+}
+
+.verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #2e7d32;
+    background: #eef7ee;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.review-card h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #666666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.reviewer-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-top: 1px solid #eee5d8;
+    padding-top: 16px;
+}
+
+.reviewer-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ebd9b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #8c6a00;
+    font-size: 18px;
+}
+
+.reviewer-info h6 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #222222;
+    margin: 0 0 2px 0;
+}
+
+.reviewer-info span {
+    font-size: 12.5px;
+    color: #888888;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Tweaks
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+    .sec-title-centered h2 {
+        font-size: 32px;
+    }
+    .comparison-table-wrapper {
+        overflow-x: auto;
+    }
+    .comparison-table {
+        min-width: 650px;
+    }
+    .reviews-summary-bar {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .sec-title-centered h2 {
+        font-size: 27px;
+    }
+    .subscription-cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px 24px;
+    }
+    .reviews-summary-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nutrition-bottom-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

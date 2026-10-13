@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Blog &amp; Farm Journal | Stackly - Organic Dairy Insights, Recipes &amp; Research</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- Responsive File -->
+<link href="css/responsive.css" rel="stylesheet">
+<!-- Color File -->
+<link href="css/color.css" rel="stylesheet">
+<!-- Custom Styles for 5 Extra Sections -->
+<link href="css/custom-blog.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="images/favicon.webp" type="image/x-icon">
+<link rel="icon" href="images/favicon.webp" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+    <!-- Preloader -->
+    <div class="loader-wrap">
+        <div class="preloader"><div class="preloader-close">Preloader Close</div></div>
+        <div class="layer layer-one"><span class="overlay"></span></div>
+        <div class="layer layer-two"><span class="overlay"></span></div>        
+        <div class="layer layer-three"><span class="overlay"></span></div>        
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header header-style-one">
+
+        <!-- Header Upper -->
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <!--Logo-->
+                    <div class="logo-box">
+                        <div class="logo"><a href="index.html"><img src="images/logo.webp" alt="Stackly Logo"></a></div>
+                    </div>
+                    <!-- Mobile Current Page Indicator -->
+                    <div class="mobile-page-indicator">
+                        <span class="mobile-page-badge"><span class="badge-dot"></span> Blog</span>
+                    </div>
+                    <div class="contact-info">
+                        <div class="single-info">
+                            <div class="icon"><span class="flaticon-null-1"></span></div>
+                            <div class="text">Stackly, Chinna Tirupathi, <br>Salem, Tamil Nadu.</div>
+                        </div>
+                        <div class="single-info">
+                            <div class="icon"><span class="flaticon-null-2"></span></div>
+                            <h5><a href="tel:(1800)4567890">(1800) 456 7890</a> <br>Call us</h5>
+                        </div>
+                    </div>
+                    <!-- Mobile Navigation Toggler (Same Line as Logo) -->
+                    <div class="mobile-nav-toggler"><img src="images/icon-bar.webp" alt="Toggle Menu"></div>
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+
+        <!-- Main Menu -->
+        <div class="main-menu">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <span class="border-shape"></span>
+                    <!--Nav Box-->
+                    <div class="nav-outer">
+                        <!--Mobile Navigation Toggler-->
+                        <div class="mobile-nav-toggler"><img src="images/icon-bar.webp" alt="Toggle Menu"></div>
+
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-md navbar-light">
+                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                <ul class="navigation">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                    <li><a href="services.html">Services</a></li>
+                                    <li class="current"><a href="blog.html">Blog</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li class="nav-auth-item nav-login-item"><a href="login.html">Login</a></li>
+                                    <li class="nav-auth-item nav-register-item"><a href="register.html">Register</a></li>
+                                    <li class="nav-auth-item nav-dashboard-item" style="display: none;"><a href="dashboard.html">Dashboard</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header main-menu">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <div class="nav-outer">
+                        <span class="border-shape"></span>
+                        <!-- Main Menu -->
+                        <nav class="main-menu">
+                            <!--Keep This Empty / Menu will come through Javascript-->
+                        </nav>
+                    </div>                        
+                </div>
+            </div>
+        </div><!-- End Sticky Menu -->
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-remove"></span></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="images/logo-three.webp" alt="Stackly Logo"></a></div>
+                <div class="menu-outer"><!--Menu Will Come Via Javascript--></div>
+
+            </nav>
+        </div><!-- End Mobile Menu -->
+
+        <div class="nav-overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div>
+    </header>
+    <!-- End Main Header -->
+    
+    <!--Search Popup-->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search theme-btn"><span class="flaticon-remove"></span></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="blog.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search articles, guides & recipes..." required >
+                            <input type="submit" value="Search Now!" class="theme-btn">
+                        </fieldset>
+                    </div>
+                </form>
+                <br>
+                <h3>Recent Search Keywords</h3>
+                <ul class="recent-searches">
+                    <li><a href="#">Grass-Fed CLA</a></li>
+                    <li><a href="#">A2 Protein Digestibility</a></li>
+                    <li><a href="#">Vat Pasteurization</a></li>
+                    <li><a href="#">Cultured Butter Recipes</a></li>
+                    <li><a href="#">Soil Microbiology</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Title -->
+    <section class="page-title" style="background-image:url(images/bg-7.webp)">
+        <div class="auto-container">
+            <h2>Blog</h2>
+            <ul class="page-breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Blog</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         [EXTRA CONTENT 1] Featured Editor's Pick / Hero Blog Showcase
+         ====================================================================== -->
+    <section class="blog-featured-hero-section" id="featured-story">
+        <div class="auto-container">
+            <div class="featured-story-card wow fadeInUp" data-wow-duration="1200ms">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-lg-6">
+                        <div class="featured-story-image">
+                            <img src="images/image-1.webp" alt="Regenerative Pasture Grazing">
+                            <span class="featured-story-tag">Editor's Deep Dive</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="featured-story-content">
+                            <div class="featured-meta">
+                                <span><i class="far fa-calendar-alt"></i> 14 October 2026</span>
+                                <span><i class="far fa-clock"></i> 7 Min Read</span>
+                                <span><i class="fas fa-microscope"></i> Agricultural Science</span>
+                            </div>
+                            <h3><a href="#featured-story">The Soil-To-Sip Revolution: How Pasture Grazing Rebuilds Ecosystems</a></h3>
+                            <p>
+                                An investigative look at how rotational multi-species clover grazing sequesters 3.2 tons of carbon per acre while producing the highest butterfat percentages and gentle A2 beta-casein proteins in American dairy.
+                            </p>
+                            <div class="featured-tags-pills">
+                                <span class="featured-pill">Regenerative Topsoil</span>
+                                <span class="featured-pill">Carbon Negative</span>
+                                <span class="featured-pill">Heritage A2 Herd</span>
+                            </div>
+                            <div class="featured-btn-group">
+                                <a href="404.html" class="btn-read-featured">
+                                    Read Article <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Sidebar Page Container (Original Section from Screenshot: Blog Classic & Sidebar)-->
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+            <div class="row clearfix">
+                
+                <!--Content Side / Blog Classic -->
+                <div class="content-side col-xl-9 col-lg-8 col-md-12 col-sm-12">
+                    <div class="blog-classic pr-lg-4">
+
+                        <!-- Post 1 -->
+                        <div class="news-block-three">
+                            <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="image-box">
+                                    <figure class="image"><a href="#featured-story"><img src="images/news-4.webp" alt="Sustainability on a Dairy Farm"></a></figure>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="wrapper-box">
+                                        <div class="date">18 Feb. 2020</div>
+                                        <div class="post-meta">
+                                            <ul class="post-info clearfix">
+                                                <li><a href="#">By : admin</a></li>
+                                                <li><a href="#">dairy, farm</a></li>
+                                                <li><a href="#">Comments: 3</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#featured-story">Sustainability On A Dairy Farm: Closing the Carbon Loop</a></h3>
+                                    <div class="text">
+                                        Our closed-loop organic farming method turns 100% of manure into biologically active natural compost, eliminating chemical fertilizers and returning vital nitrogen, phosphorus, and organic matter back into hay pastures.
+                                    </div>
+                                    <div class="link-box"><a href="404.html" class="theme-btn read-more">Read more</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 2 -->
+                        <div class="news-block-three">
+                            <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="image-box">
+                                    <figure class="image"><a href="#featured-story"><img src="images/news-5.webp" alt="Highest Standards for a Dairy Farm"></a></figure>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="wrapper-box">
+                                        <div class="date">18 Feb. 2020</div>
+                                        <div class="post-meta">
+                                            <ul class="post-info clearfix">
+                                                <li><a href="#">By : admin</a></li>
+                                                <li><a href="#">dairy, standards</a></li>
+                                                <li><a href="#">Comments: 3</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#featured-story">Highest Standards For A Dairy Farm: Inside Our Certified Humane Audit</a></h3>
+                                    <div class="text">
+                                        A behind-the-scenes look at how third-party inspectors assess cow welfare: zero tail docking, 24/7 pasture access, low-stress handling, and clean airy barns that keep our herd healthy without prophylactic antibiotics.
+                                    </div>
+                                    <div class="link-box"><a href="404.html" class="theme-btn read-more">Read more</a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 3 -->
+                        <div class="news-block-three">
+                            <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="image-box">
+                                    <figure class="image"><a href="#featured-story"><img src="images/news-6.webp" alt="Milk Microbiology"></a></figure>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="wrapper-box">
+                                        <div class="date">12 Feb. 2020</div>
+                                        <div class="post-meta">
+                                            <ul class="post-info clearfix">
+                                                <li><a href="#">By : admin</a></li>
+                                                <li><a href="#">milk, microbiology</a></li>
+                                                <li><a href="#">Comments: 5</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#featured-story">The Microbiology of Raw Pasture Milk vs Industrial Ultra-Pasteurization</a></h3>
+                                    <div class="text">
+                                        Why temperature matters: gentle batch vat pasteurization (145°F) preserves heat-sensitive digestive enzymes, lactoferrin, and natural vitamins, whereas extreme commercial temperatures (280°F) denature vital proteins.
+                                    </div>
+                                    <div class="link-box"><a href="404.html" class="theme-btn read-more">Read more</a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 4 -->
+                        <div class="news-block-three">
+                            <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="image-box">
+                                    <figure class="image"><a href="#featured-story"><img src="images/news-7.webp" alt="Conjugated Linoleic Acid"></a></figure>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="wrapper-box">
+                                        <div class="date">12 Feb. 2020</div>
+                                        <div class="post-meta">
+                                            <ul class="post-info clearfix">
+                                                <li><a href="#">By : admin</a></li>
+                                                <li><a href="#">pasture, nutrition</a></li>
+                                                <li><a href="#">Comments: 2</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#featured-story">Why Grass-Fed Cows Produce 5x More Conjugated Linoleic Acid (CLA)</a></h3>
+                                    <div class="text">
+                                        When cows convert living chlorophyll and diverse field legumes instead of industrial grain silos, their milk naturally enriches with conjugated linoleic acid and heart-healthy Omega-3 fatty acids.
+                                    </div>
+                                    <div class="link-box"><a href="404.html" class="theme-btn read-more">Read more</a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 5 -->
+                        <div class="news-block-three">
+                            <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="image-box">
+                                    <figure class="image"><a href="#featured-story"><img src="images/news-4.webp" alt="Master Herdsman"></a></figure>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="wrapper-box">
+                                        <div class="date">08 Feb. 2020</div>
+                                        <div class="post-meta">
+                                            <ul class="post-info clearfix">
+                                                <li><a href="#">By : admin</a></li>
+                                                <li><a href="#">people, herdsman</a></li>
+                                                <li><a href="#">Comments: 6</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#featured-story">Meet Our Master Herdsman: Four Decades of Heritage Breeding</a></h3>
+                                    <div class="text">
+                                        An intimate interview with Mark Henry on observing cow psychology, natural mother-calf bonding, and why happy pasture cows consistently produce the sweetest, cream-top whole milk.
+                                    </div>
+                                    <div class="link-box"><a href="404.html" class="theme-btn read-more">Read more</a></div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    
+                    <!--Styled Pagination-->
+                    <ul class="styled-pagination mb-30">
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#"><span class="fas fa-angle-right"></span></a></li>
+                    </ul>                
+                    <!--End Styled Pagination-->
+                    
+                </div>
+                
+                <!--Sidebar Side-->
+                <div class="sidebar-side col-xl-3 col-lg-4 col-md-12 col-sm-12">
+                    <aside class="sidebar">
+                        
+                        <!-- Search Widget -->
+                        <div class="widget widget_search">
+                            <form action="blog.html" method="get" class="search-form">
+                                <div class="form-group">
+                                    <input type="search" name="search-field" placeholder="Your Keyword ..." required="">
+                                    <button type="submit"><i class="stroke-gap-icon icon-Search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!--Blog Category Widget-->
+                        <div class="widget sidebar-blog-category">
+                            <h3 class="widget-title">Categories</h3>
+                            <ul class="cat-list">
+                                <li><a href="#">Pasture Grazing <span>(14)</span></a></li>
+                                <li><a href="#">Cattle Breeding <span>(08)</span></a></li>
+                                <li><a href="#">Organic Milk <span>(22)</span></a></li>
+                                <li><a href="#">Farmstead Recipes <span>(11)</span></a></li>
+                                <li><a href="#">Farmer Stories <span>(07)</span></a></li>
+                                <li><a href="#">Soil Microbiology <span>(09)</span></a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Popular Posts / Recent News -->
+                        <div class="widget popular-posts">
+                            <h3 class="widget-title">Recent News</h3>
+                            <article class="post">
+                                <figure class="post-thumb"><a href="#featured-story"><img src="images/news-8.webp" alt="Organic Market Value"></a></figure>
+                                <div class="text"><a href="#featured-story">Increase in Market Value of Certified Organic Dairy</a></div>
+                                <div class="post-info">14 Oct. 2026</div>
+                            </article>
+
+                            <article class="post">
+                                <figure class="post-thumb"><a href="#featured-story"><img src="images/news-9.webp" alt="Health Benefits"></a></figure>
+                                <div class="text"><a href="#featured-story">Health Benefits of Raw Grass-Fed Whole Cream</a></div>
+                                <div class="post-info">09 Oct. 2026</div>
+                            </article>
+                            
+                            <article class="post">
+                                <figure class="post-thumb"><a href="#featured-story"><img src="images/news-10.webp" alt="Farm Families"></a></figure>
+                                <div class="text"><a href="#featured-story">Meet the Families Who Keep Our Farm Sanctuary Running</a></div>
+                                <div class="post-info">28 Sep. 2026</div>
+                            </article>
+                            
+                            <article class="post">
+                                <figure class="post-thumb"><a href="#featured-story"><img src="images/news-11.webp" alt="Sustainable Packaging"></a></figure>
+                                <div class="text"><a href="#featured-story">Why Returnable Glass Bottles Outperform Recycled Plastic</a></div>
+                                <div class="post-info">15 Sep. 2026</div>
+                            </article>
+                        </div>
+                        
+                        <!-- Popular Tags -->
+                        <div class="widget popular-tags">
+                            <h3 class="widget-title">Tags</h3>
+                            <a href="#">Organic Milk</a>
+                            <a href="#">Pasture Fed</a>
+                            <a href="#">A2 Protein</a>
+                            <a href="#">Cattle Farm</a>
+                            <a href="#">Vat Pasteurization</a>
+                            <a href="#">Agriculture</a>
+                            <a href="#">Zero Waste</a>
+                            <a href="#">Farm Cheese</a>
+                        </div>
+                        
+                    </aside>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         [EXTRA CONTENT 2] Farmhouse Dairy Culinary Journal: Seasonal Recipes
+         ====================================================================== -->
+    <section class="farm-recipes-section" id="recipes-section">
+        <div class="auto-container">
+            <div class="sec-title-centered">
+                <span class="sec-subtitle-badge"><i class="fas fa-utensils"></i> Farm Kitchen Table</span>
+                <h2>Farmhouse Dairy Culinary Journal</h2>
+                <div class="text">
+                    Tested rustic recipes created by our culinary farm team, celebrating the natural richness of fresh whole milk, sweet clotted cream, and cultured yellow butter.
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Recipe 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="recipe-card wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="0ms">
+                        <div class="recipe-image-box">
+                            <img src="images/image-9.webp" alt="French Brioche">
+                            <span class="recipe-prep-badge"><i class="far fa-clock"></i> 45 Mins</span>
+                        </div>
+                        <div class="recipe-body">
+                            <span class="recipe-ingredient-tag">Hancock Cultured Butter</span>
+                            <h4>Traditional French Brioche with Sea Salt Butter</h4>
+                            <p>How high-butterfat pasture butter creates an airy, feather-light crumb structure with a deeply caramelized golden crust.</p>
+                            <div class="recipe-footer">
+                                <span class="recipe-difficulty"><i class="fas fa-utensil-spoon"></i> Intermediate</span>
+                                <a href="404.html" class="recipe-view-btn">View Recipe <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recipe 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="recipe-card wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="200ms">
+                        <div class="recipe-image-box">
+                            <img src="images/image-8.webp" alt="Greek Yogurt Panna Cotta">
+                            <span class="recipe-prep-badge"><i class="far fa-clock"></i> 20 Mins</span>
+                        </div>
+                        <div class="recipe-body">
+                            <span class="recipe-ingredient-tag">Probiotic Greek Yogurt</span>
+                            <h4>Wildflower Honey &amp; Yogurt Panna Cotta</h4>
+                            <p>A silky Italian chilled dessert naturally sweetened with unprocessed comb honey and infused with crushed Madagascar vanilla beans.</p>
+                            <div class="recipe-footer">
+                                <span class="recipe-difficulty"><i class="fas fa-utensil-spoon"></i> Easy</span>
+                                <a href="404.html" class="recipe-view-btn">View Recipe <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recipe 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="recipe-card wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="400ms">
+                        <div class="recipe-image-box">
+                            <img src="images/3.webp" alt="Double Cream Caramel Pot de Crème">
+                            <span class="recipe-prep-badge"><i class="far fa-clock"></i> 35 Mins</span>
+                        </div>
+                        <div class="recipe-body">
+                            <span class="recipe-ingredient-tag">Clotted Double Cream</span>
+                            <h4>Double Cream Caramel Pot de Crème</h4>
+                            <p>Rich, velvety baked custard showcasing the delicate sweet natural creaminess of pasture-grazed whole milk without heavy sugar.</p>
+                            <div class="recipe-footer">
+                                <span class="recipe-difficulty"><i class="fas fa-utensil-spoon"></i> Easy</span>
+                                <a href="404.html" class="recipe-view-btn">View Recipe <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         [EXTRA CONTENT 3] Farmstead Audio Dispatches & Podcasts
+         ====================================================================== -->
+    <section class="farm-podcast-section" id="podcast-section" style="background-image: url('images/bg-3.webp');">
+        <div class="overlay-dark"></div>
+        <div class="auto-container" style="position: relative; z-index: 2;">
+            <div class="sec-title-centered light">
+                <span class="sec-subtitle-badge light"><i class="fas fa-podcast"></i> Listen &amp; Learn</span>
+                <h2>The Pasture Voice: Weekly Audio Dispatches</h2>
+                <div class="text">
+                    Tune in to field interviews, authentic barn sounds, and candid discussions about organic nutrition, regenerative soil, and clean food ethics.
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Episode 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="podcast-card wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="0ms">
+                        <div class="podcast-header">
+                            <span class="episode-number">Episode 42</span>
+                            <span class="episode-duration"><i class="far fa-clock"></i> 28 Mins</span>
+                        </div>
+                        <div class="podcast-play-box">
+                            <button class="podcast-play-btn" onclick="window.location.href='404.html'">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="podcast-waveform">
+                                <span style="height: 12px;"></span>
+                                <span style="height: 20px;"></span>
+                                <span style="height: 16px;"></span>
+                                <span style="height: 24px;"></span>
+                                <span style="height: 14px;"></span>
+                                <span style="height: 22px;"></span>
+                                <span style="height: 18px;"></span>
+                                <span style="height: 10px;"></span>
+                            </div>
+                        </div>
+                        <h4>The Truth About A1 vs A2 Milk Proteins &amp; Digestion</h4>
+                        <p>Exploring the molecular difference between heritage Jersey A2 beta-casein and commercial A1 milk with clinical gastroenterologist Dr. Robert Hall.</p>
+                        <div class="podcast-guest">Guest: Dr. Robert Hall, Gut Health MD</div>
+                    </div>
+                </div>
+
+                <!-- Episode 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="podcast-card wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="200ms">
+                        <div class="podcast-header">
+                            <span class="episode-number">Episode 41</span>
+                            <span class="episode-duration"><i class="far fa-clock"></i> 34 Mins</span>
+                        </div>
+                        <div class="podcast-play-box">
+                            <button class="podcast-play-btn" onclick="window.location.href='404.html'">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="podcast-waveform">
+                                <span style="height: 18px;"></span>
+                                <span style="height: 14px;"></span>
+                                <span style="height: 22px;"></span>
+                                <span style="height: 12px;"></span>
+                                <span style="height: 24px;"></span>
+                                <span style="height: 16px;"></span>
+                                <span style="height: 20px;"></span>
+                                <span style="height: 14px;"></span>
+                            </div>
+                        </div>
+                        <h4>Behind the Scenes: A Day in the Life of an Organic Herdsman</h4>
+                        <p>Master Herdsman Mark Henry takes us through dawn milking, observing cow herd dynamics, and winter feeding on fermented clover silage.</p>
+                        <div class="podcast-guest">Guest: Mark Henry, Lead Herdsman</div>
+                    </div>
+                </div>
+
+                <!-- Episode 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="podcast-card wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="400ms">
+                        <div class="podcast-header">
+                            <span class="episode-number">Episode 40</span>
+                            <span class="episode-duration"><i class="far fa-clock"></i> 22 Mins</span>
+                        </div>
+                        <div class="podcast-play-box">
+                            <button class="podcast-play-btn" onclick="window.location.href='404.html'">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="podcast-waveform">
+                                <span style="height: 10px;"></span>
+                                <span style="height: 16px;"></span>
+                                <span style="height: 24px;"></span>
+                                <span style="height: 18px;"></span>
+                                <span style="height: 14px;"></span>
+                                <span style="height: 22px;"></span>
+                                <span style="height: 12px;"></span>
+                                <span style="height: 16px;"></span>
+                            </div>
+                        </div>
+                        <h4>Why Returnable Glass Bottles Change Everything</h4>
+                        <p>How inert glass packaging preserves pristine farm flavor, prevents microplastic leaching, and powers our circular zero-waste porch delivery system.</p>
+                        <div class="podcast-guest">Guest: Sarah Chen, Eco-Packaging Pioneer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         [EXTRA CONTENT 4] Pasture Chronicles Visual Photo Essay
+         ====================================================================== -->
+    <section class="farm-photo-essay-section" id="photo-essay">
+        <div class="auto-container">
+            <div class="sec-title-centered">
+                <span class="sec-subtitle-badge"><i class="fas fa-camera"></i> Life on the Pasture</span>
+                <h2>A Day in the Life at Hancock Farm</h2>
+                <div class="text">
+                    A visual documentary capture of life across our pastures, robotic milking centers, artisan cheese caves, and morning milk routes.
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Photo 1 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="photo-essay-grid-item wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="0ms">
+                        <img src="images/image-18.webp" alt="Dawn Milking">
+                        <div class="photo-essay-overlay">
+                            <span class="time-badge"><i class="far fa-clock"></i> 5:00 AM Dawn</span>
+                            <h4>The Morning Milking Routine</h4>
+                            <p>Cows calmly strolling through dew-covered clover toward voluntary robotic massage milking stalls.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="photo-essay-grid-item wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="200ms">
+                        <img src="images/image-2.webp" alt="Artisan Cheese Cave">
+                        <div class="photo-essay-overlay">
+                            <span class="time-badge"><i class="far fa-clock"></i> 10:30 AM Aging Cellar</span>
+                            <h4>The Artisanal Cheese Cave</h4>
+                            <p>Over 1,200 wheels of clothbound cheddar aging patiently on fragrant native pine shelves.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="photo-essay-grid-item wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="400ms">
+                        <img src="images/news-7.webp" alt="Pasture Grazing">
+                        <div class="photo-essay-overlay">
+                            <span class="time-badge"><i class="far fa-clock"></i> 2:00 PM Open Meadow</span>
+                            <h4>Pasture Freedom &amp; Spring Grazing</h4>
+                            <p>Heritage Jersey mothers and calves grazing peacefully under warm sunshine with natural mountain spring water.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="photo-essay-grid-item wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="600ms">
+                        <img src="images/image-21.webp" alt="Sterile Cold Chain">
+                        <div class="photo-essay-overlay">
+                            <span class="time-badge"><i class="far fa-clock"></i> 4:30 PM Cold Packaging</span>
+                            <h4>The 24-Hour Cold Chain</h4>
+                            <p>Milk gently vat-pasteurized at 145°F and poured into sterile heritage glass bottles ready for early morning doorstep delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         [EXTRA CONTENT 5] The Weekly Pasture Gazette & Free Organic Guidebook
+         ====================================================================== -->
+    <section class="farm-newsletter-guide-section" id="newsletter-guide">
+        <div class="auto-container">
+            <div class="guide-box-wrapper wow fadeInUp" data-wow-duration="1200ms">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="guide-form-left">
+                            <span class="sec-subtitle-badge light"><i class="fas fa-book-open"></i> Free Organic Guidebook</span>
+                            <h3>Join 18,000+ Conscious Food Lovers: The Weekly Pasture Gazette</h3>
+                            <p>
+                                Subscribe to our weekly editorial journal and immediately receive our free 42-page PDF guidebook: <strong>"The Grass-Fed Dairy Kitchen: Artisan Cooking, Holistic Digestion &amp; Sourcing Real Food"</strong>.
+                            </p>
+                            <form class="guide-inline-form" action="404.html" novalidate onsubmit="window.location.href='404.html'; return false;">
+                                <input type="email" placeholder="Enter your email address...">
+                                <button type="button" onclick="window.location.href='404.html';"><i class="fas fa-download"></i> Get Free Guidebook</button>
+                            </form>
+                            <small style="color: #a49e92; font-size: 13px;">*Zero spam. Delivered every Thursday morning. Unsubscribe with 1 click anytime.</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <ul class="guide-perks-list">
+                            <li class="guide-perk-item">
+                                <i class="fas fa-seedling"></i>
+                                <div>
+                                    <h5>Seasonal Harvest Previews</h5>
+                                    <p>Reserve small-batch cave-aged cheeses and honey butter before public release.</p>
+                                </div>
+                            </li>
+                            <li class="guide-perk-item">
+                                <i class="fas fa-dna"></i>
+                                <div>
+                                    <h5>Nutritional Science Insights</h5>
+                                    <p>Transparent research on A2 genetics, CLA benefits, and low-heat pasteurization.</p>
+                                </div>
+                            </li>
+                            <li class="guide-perk-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <div>
+                                    <h5>VIP Tour &amp; Workshop Passes</h5>
+                                    <p>Early-bird invitations to weekend family calf feedings and butter churning workshops.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="main-footer" style="background-image: url(images/bg-6.webp);">
+        <div class="auto-container">
+            <!--Widgets Section-->
+            <div class="widgets-section">
+                <div class="row clearfix">
+                    
+                    <!--Column-->
+                    <div class="column col-lg-4">
+                        <div class="widget about-widget">
+                            <div class="logo"><a href="index.html"><img src="images/logo.webp" alt="Stackly Logo"></a></div>
+                            <div class="text">Stackly, Chinna Tirupathi, <br>Salem, Tamil Nadu.</div>
+                            <h5>Call Us </h5>
+                            <h4><a href="tel:18004567890">1800 456 7890</a></h4>
+                        </div>     
+                    </div>
+                    
+                    <!--Column-->
+                    <div class="column col-lg-4">
+                        <div class="footer-widget links-widget">
+                            <h3 class="widget-title">Useful Links</h3>
+                            <div class="widget-content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="products.html">Products</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li><a href="services.html">Services</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--Column-->
+                    <div class="column col-lg-4">
+                        <div class="footer-widget newsletter-widget">
+                            <h3 class="widget-title">Newsletter</h3>
+                            <div class="widget-content">
+                                <div class="hint">Get latest updates, farm stories and seasonal offers.</div>
+                                <form action="404.html" novalidate onsubmit="window.location.href='404.html'; return false;">
+                                    <input type="email" placeholder="Enter your email address">
+                                    <button type="button" onclick="window.location.href='404.html';"><i class="fa fa-paper-plane"></i></button>
+                                </form>
+                                <div class="social-links">
+                                    <ul>
+                                        <li><a href="404.html" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="404.html" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="404.html" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="404.html" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="auto-container">
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <div class="row m-0 justify-content-between">
+                        <div class="text">© Copyright <a href="index.html">Stackly</a>. All rights reserved.</div>
+                        <div class="text">Crafted with Pure Organic Quality</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+	
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-right-arrow"></span></div>
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/isotope.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/lazyload.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

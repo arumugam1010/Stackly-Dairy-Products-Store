@@ -1,0 +1,695 @@
+/* ==========================================================================
+   Custom Styles for Hancock Farm Blog & Editorial Page
+   5 Extra Content Sections & Journal Enhancements
+   ========================================================================== */
+
+/* Subtitle Badges */
+.sec-subtitle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f7bd00;
+    background: rgba(247, 189, 0, 0.1);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(247, 189, 0, 0.25);
+}
+
+.sec-subtitle-badge.light {
+    color: #f7bd00;
+    background: rgba(247, 189, 0, 0.15);
+    border-color: rgba(247, 189, 0, 0.35);
+}
+
+.sec-title-centered {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 55px auto;
+}
+
+.sec-title-centered h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 16px;
+}
+
+.sec-title-centered .text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #666666;
+    margin: 0;
+}
+
+.sec-title-centered.light h2 {
+    color: #ffffff;
+}
+
+.sec-title-centered.light .text {
+    color: #ded9cf;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 1: Featured Editor's Pick (.blog-featured-hero-section)
+   -------------------------------------------------------------------------- */
+.blog-featured-hero-section {
+    position: relative;
+    padding: 85px 0 65px;
+    background-color: #faf6f0;
+    border-bottom: 1px solid #ebd9b8;
+}
+
+.featured-story-card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #eee4d5;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.featured-story-image {
+    position: relative;
+    height: 100%;
+    min-height: 380px;
+    overflow: hidden;
+}
+
+.featured-story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.featured-story-card:hover .featured-story-image img {
+    transform: scale(1.05);
+}
+
+.featured-story-tag {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: #f7bd00;
+    color: #222222;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(247, 189, 0, 0.35);
+}
+
+.featured-story-content {
+    padding: 50px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13.5px;
+    color: #888888;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.featured-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.featured-meta i {
+    color: #f7bd00;
+}
+
+.featured-story-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #222222;
+    margin-bottom: 16px;
+}
+
+.featured-story-content h3 a {
+    color: #222222;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.featured-story-content h3 a:hover {
+    color: #f7bd00;
+}
+
+.featured-story-content p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #666666;
+    margin-bottom: 24px;
+}
+
+.featured-tags-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+}
+
+.featured-pill {
+    background: #f7f2e7;
+    color: #7d6000;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 14px;
+}
+
+.featured-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.btn-read-featured {
+    background: #f7bd00;
+    color: #222222;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 13px 26px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-read-featured:hover {
+    background: #222222;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 2: Farm Kitchen Culinary Recipes (.farm-recipes-section)
+   -------------------------------------------------------------------------- */
+.farm-recipes-section {
+    position: relative;
+    padding: 100px 0 90px;
+    background-color: #ffffff;
+}
+
+.recipe-card {
+    background: #faf7f2;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid #eee4d5;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 30px);
+}
+
+.recipe-card:hover {
+    transform: translateY(-8px);
+    background: #ffffff;
+    border-color: #f7bd00;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
+}
+
+.recipe-image-box {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #eee5d8;
+}
+
+.recipe-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.recipe-card:hover .recipe-image-box img {
+    transform: scale(1.08);
+}
+
+.recipe-prep-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(34, 34, 34, 0.85);
+    color: #f7bd00;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 16px;
+    backdrop-filter: blur(4px);
+}
+
+.recipe-body {
+    padding: 28px 24px 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.recipe-ingredient-tag {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2e7d32;
+    background: #eaf6ea;
+    padding: 4px 10px;
+    border-radius: 12px;
+    align-self: flex-start;
+    margin-bottom: 12px;
+}
+
+.recipe-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 10px;
+    line-height: 1.35;
+}
+
+.recipe-body p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.68;
+    color: #666666;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.recipe-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #ebd9b8;
+    padding-top: 14px;
+    margin-top: auto;
+}
+
+.recipe-difficulty {
+    font-size: 13px;
+    color: #888888;
+}
+
+.recipe-difficulty i {
+    color: #f7bd00;
+}
+
+.recipe-view-btn {
+    color: #8c6a00;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.recipe-view-btn:hover {
+    color: #222222;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 3: Farmstead Audio Dispatches & Podcasts (.farm-podcast-section)
+   -------------------------------------------------------------------------- */
+.farm-podcast-section {
+    position: relative;
+    padding: 105px 0 95px;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.farm-podcast-section .overlay-dark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 25, 20, 0.94);
+}
+
+.podcast-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 20px;
+    padding: 34px 28px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+}
+
+.podcast-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.13);
+    border-color: #f7bd00;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.podcast-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.episode-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #f7bd00;
+}
+
+.episode-duration {
+    font-size: 13px;
+    color: #ded8cd;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+.podcast-play-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 12px 18px;
+    border-radius: 14px;
+}
+
+.podcast-play-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #f7bd00;
+    color: #222222;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.podcast-play-btn:hover {
+    background: #ffffff;
+    transform: scale(1.08);
+}
+
+.podcast-waveform {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-grow: 1;
+    height: 24px;
+}
+
+.podcast-waveform span {
+    display: block;
+    width: 3px;
+    background: #f7bd00;
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.podcast-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.35;
+}
+
+.podcast-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.68;
+    color: #dcd6cc;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.podcast-guest {
+    font-size: 13px;
+    color: #f7bd00;
+    font-weight: 600;
+    margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 4: Pasture Chronicles Visual Photo Essay (.farm-photo-essay-section)
+   -------------------------------------------------------------------------- */
+.farm-photo-essay-section {
+    position: relative;
+    padding: 100px 0 90px;
+    background-color: #faf6f0;
+}
+
+.photo-essay-grid-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    height: 320px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.photo-essay-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.photo-essay-grid-item:hover img {
+    transform: scale(1.08);
+}
+
+.photo-essay-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: linear-gradient(to top, rgba(18, 25, 20, 0.92) 0%, rgba(18, 25, 20, 0.3) 60%, transparent 100%);
+    padding: 30px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #ffffff;
+    transition: all 0.35s ease;
+}
+
+.photo-essay-overlay .time-badge {
+    background: #f7bd00;
+    color: #222222;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+
+.photo-essay-overlay h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.photo-essay-overlay p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #dcd6cb;
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 5: Farm Journal Newsletter & Free Guidebook (.farm-newsletter-guide-section)
+   -------------------------------------------------------------------------- */
+.farm-newsletter-guide-section {
+    position: relative;
+    padding: 100px 0 95px;
+    background-color: #ffffff;
+}
+
+.guide-box-wrapper {
+    background: #202722;
+    border-radius: 26px;
+    padding: 55px 50px;
+    color: #ffffff;
+    border-left: 6px solid #f7bd00;
+}
+
+.guide-form-left h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.guide-form-left p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15.5px;
+    color: #d2ccbf;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.guide-inline-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+
+.guide-inline-form input {
+    flex-grow: 1;
+    min-width: 240px;
+    height: 54px;
+    border-radius: 27px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0 24px;
+    color: #ffffff;
+    font-size: 14.5px;
+}
+
+.guide-inline-form input:focus {
+    outline: none;
+    border-color: #f7bd00;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.guide-inline-form button {
+    height: 54px;
+    padding: 0 32px;
+    border-radius: 27px;
+    background: #f7bd00;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.guide-inline-form button:hover {
+    background: #ffffff;
+    color: #222222;
+    transform: translateY(-2px);
+}
+
+.guide-perks-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    height: 100%;
+}
+
+.guide-perk-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.guide-perk-item i {
+    font-size: 22px;
+    color: #f7bd00;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.guide-perk-item h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+}
+
+.guide-perk-item p {
+    font-size: 13.5px;
+    color: #d0cabc;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Tweaks
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+    .featured-story-image {
+        min-height: 280px;
+    }
+    .featured-story-content {
+        padding: 35px 25px;
+    }
+    .guide-box-wrapper {
+        padding: 40px 25px;
+    }
+    .guide-perks-list {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .sec-title-centered h2 {
+        font-size: 27px;
+    }
+    .featured-story-content h3 {
+        font-size: 24px;
+    }
+    .guide-form-left h3 {
+        font-size: 24px;
+    }
+}

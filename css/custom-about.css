@@ -1,0 +1,716 @@
+/* ==========================================================================
+   Custom Styles for Hancock Farm About Page
+   Additional 5 Content Sections & Enhancements
+   ========================================================================== */
+
+/* Subtitle Badges */
+.sec-subtitle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f7bd00;
+    background: rgba(247, 189, 0, 0.1);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(247, 189, 0, 0.25);
+}
+
+.sec-subtitle-badge.light {
+    color: #f7bd00;
+    background: rgba(247, 189, 0, 0.15);
+    border-color: rgba(247, 189, 0, 0.35);
+}
+
+.sec-title-centered {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 55px auto;
+}
+
+.sec-title-centered h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 18px;
+}
+
+.sec-title-centered .text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #666666;
+    margin: 0;
+}
+
+.sec-title-centered.light h2 {
+    color: #ffffff;
+}
+
+.sec-title-centered.light .text {
+    color: #dfdbd3;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 1: Core Farming Values (.farm-values-section)
+   -------------------------------------------------------------------------- */
+.farm-values-section {
+    position: relative;
+    padding: 100px 0 90px;
+    background-color: #fbf8f3;
+}
+
+.farm-value-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 38px 26px 32px;
+    margin-bottom: 30px;
+    border: 1px solid #ebe4d8;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 30px);
+}
+
+.farm-value-card:hover {
+    transform: translateY(-8px);
+    border-color: #f7bd00;
+    box-shadow: 0 20px 40px rgba(247, 189, 0, 0.15);
+}
+
+.farm-value-card .icon-wrapper {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #fff9e7;
+    border: 2px solid #fae8b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #f7bd00;
+    margin-bottom: 24px;
+    transition: all 0.35s ease;
+}
+
+.farm-value-card:hover .icon-wrapper {
+    background: #f7bd00;
+    color: #ffffff;
+    transform: scale(1.08) rotate(6deg);
+    border-color: #f7bd00;
+}
+
+.farm-value-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 14px;
+    line-height: 1.35;
+}
+
+.farm-value-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #666666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.farm-value-card .value-pill {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8c6800;
+    background: #f9f2e3;
+    padding: 5px 14px;
+    border-radius: 20px;
+    align-self: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 2: Farm-To-Table Process (.farm-process-section)
+   -------------------------------------------------------------------------- */
+.farm-process-section {
+    position: relative;
+    padding: 100px 0 90px;
+    background: #ffffff;
+}
+
+.process-step-card {
+    position: relative;
+    background: #faf7f2;
+    border-radius: 18px;
+    padding: 40px 26px 34px;
+    margin-bottom: 30px;
+    border: 1px solid #eee7db;
+    transition: all 0.4s ease;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+}
+
+.process-step-card:hover {
+    transform: translateY(-8px);
+    background: #ffffff;
+    border-color: #f7bd00;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.08);
+}
+
+.process-step-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.process-step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 800;
+    color: #f7bd00;
+    line-height: 1;
+}
+
+.process-icon-box {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid #ebd9a6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #f7bd00;
+    transition: all 0.3s ease;
+}
+
+.process-step-card:hover .process-icon-box {
+    background: #f7bd00;
+    color: #ffffff;
+    border-color: #f7bd00;
+}
+
+.process-step-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 12px;
+    line-height: 1.35;
+}
+
+.process-step-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #666666;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.process-step-card .process-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #4a6b46;
+}
+
+.process-step-card .process-meta i {
+    color: #5b9454;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 3: Quality Certifications (.farm-certifications-section)
+   -------------------------------------------------------------------------- */
+.farm-certifications-section {
+    position: relative;
+    padding: 100px 0 90px;
+    background-color: #fbf8f3;
+}
+
+.cert-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 36px 26px 30px;
+    margin-bottom: 30px;
+    border: 1px solid #e9e2d5;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-card:hover {
+    transform: translateY(-7px);
+    border-color: #f7bd00;
+    box-shadow: 0 16px 36px rgba(247, 189, 0, 0.12);
+}
+
+.cert-badge-top {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2a6839;
+    background: #eef7ee;
+    padding: 4px 12px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #cbe4ce;
+}
+
+.cert-icon {
+    font-size: 38px;
+    color: #f7bd00;
+    margin-bottom: 18px;
+}
+
+.cert-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 12px;
+}
+
+.cert-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.68;
+    color: #666666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.cert-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px dashed #e7dfd1;
+    padding-top: 16px;
+}
+
+.cert-checklist li {
+    font-size: 13px;
+    color: #555555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.cert-checklist li i {
+    color: #3b8b4b;
+    font-size: 12px;
+}
+
+.purity-pledge-banner {
+    margin-top: 35px;
+    background: #202722;
+    border-radius: 20px;
+    padding: 40px 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    border-left: 6px solid #f7bd00;
+}
+
+.purity-pledge-banner .banner-text {
+    max-width: 700px;
+}
+
+.purity-pledge-banner h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.purity-pledge-banner p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #d1ccbf;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.purity-pledge-banner .btn-pledge {
+    background: #f7bd00;
+    color: #222222;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.purity-pledge-banner .btn-pledge:hover {
+    background: #ffffff;
+    color: #222222;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 4: Sustainability & Environmental Milestones (.farm-impact-section)
+   -------------------------------------------------------------------------- */
+.farm-impact-section {
+    position: relative;
+    padding: 105px 0 95px;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.farm-impact-section .overlay-dark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 25, 20, 0.92);
+}
+
+.impact-stat-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    padding: 40px 26px 34px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    text-align: center;
+    transition: all 0.4s ease;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+}
+
+.impact-stat-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #f7bd00;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+}
+
+.impact-stat-icon {
+    font-size: 34px;
+    color: #f7bd00;
+    margin-bottom: 18px;
+}
+
+.impact-stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.impact-stat-card h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #f7bd00;
+    margin-bottom: 12px;
+}
+
+.impact-stat-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #d8d4cc;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.farm-tour-cta-box {
+    margin-top: 35px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(247, 189, 0, 0.35);
+    border-radius: 20px;
+    padding: 35px 40px;
+    text-align: center;
+}
+
+.farm-tour-cta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.farm-tour-cta-box p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #dcd7ce;
+    max-width: 680px;
+    margin: 0 auto 24px auto;
+}
+
+.farm-tour-cta-box .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cta-btn-gold {
+    background: #f7bd00;
+    color: #222222;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn-gold:hover {
+    background: #ffffff;
+    color: #222222;
+    transform: translateY(-2px);
+}
+
+.cta-btn-outline {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn-outline:hover {
+    border-color: #f7bd00;
+    color: #f7bd00;
+    background: rgba(247, 189, 0, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 5: Frequently Asked Questions (.farm-faq-section)
+   -------------------------------------------------------------------------- */
+.farm-faq-section {
+    position: relative;
+    padding: 100px 0 95px;
+    background-color: #ffffff;
+}
+
+.faq-accordion-wrapper {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.farm-faq-item {
+    background: #faf7f2;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    border: 1px solid #eee5d8;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.farm-faq-item.active {
+    border-color: #f7bd00;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(247, 189, 0, 0.1);
+}
+
+.farm-faq-header {
+    padding: 22px 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    user-select: none;
+}
+
+.faq-question-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #222222;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.faq-question-title i {
+    color: #f7bd00;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.faq-toggle-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #e7ded0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666666;
+    font-size: 13px;
+    flex-shrink: 0;
+    transition: all 0.35s ease;
+}
+
+.farm-faq-item.active .faq-toggle-icon {
+    background: #f7bd00;
+    color: #222222;
+    border-color: #f7bd00;
+    transform: rotate(180deg);
+}
+
+.farm-faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.farm-faq-body-inner {
+    padding: 0 28px 24px 60px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #666666;
+}
+
+.faq-support-bar {
+    max-width: 880px;
+    margin: 45px auto 0 auto;
+    background: #fbf8f3;
+    border: 1px dashed #e3d8c5;
+    border-radius: 16px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.faq-support-text {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.faq-support-text i {
+    font-size: 26px;
+    color: #f7bd00;
+}
+
+.faq-support-text h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin: 0 0 3px 0;
+    color: #222222;
+}
+
+.faq-support-text p {
+    font-size: 13.5px;
+    margin: 0;
+    color: #777777;
+}
+
+.faq-call-btn {
+    background: #222222;
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.faq-call-btn:hover {
+    background: #f7bd00;
+    color: #222222;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Tweaks
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+    .sec-title-centered h2 {
+        font-size: 32px;
+    }
+    .purity-pledge-banner {
+        padding: 30px 25px;
+    }
+    .purity-pledge-banner h3 {
+        font-size: 22px;
+    }
+    .impact-stat-number {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 767px) {
+    .sec-title-centered h2 {
+        font-size: 28px;
+    }
+    .farm-faq-header {
+        padding: 18px 20px;
+    }
+    .faq-question-title {
+        font-size: 17px;
+    }
+    .farm-faq-body-inner {
+        padding: 0 20px 20px 20px;
+    }
+    .purity-pledge-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .faq-support-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

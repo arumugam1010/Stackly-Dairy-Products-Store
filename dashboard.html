@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dashboard | Stackly - Heritage Dairy Management Portal</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/fontawesome-all.css" rel="stylesheet">
+<link href="css/custom-dashboard.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="images/favicon.webp" type="image/x-icon">
+<link rel="icon" href="images/favicon.webp" type="image/x-icon">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="dashboard-sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <div class="dashboard-layout">
+
+        <!-- ==================================================================
+             Sidebar (Distinct 10-Item Navigations for Admin, Farmer, Customer)
+             ================================================================== -->
+        <aside class="dashboard-sidebar" id="dashboardSidebar">
+            <!-- Brand / Logo (Logo only - clicks to first sidebar item) -->
+            <div class="sidebar-brand-box">
+                <a href="javascript:void(0)" class="sidebar-logo-link" id="sidebarLogoBtn" title="Go to Dashboard Overview">
+                    <img src="images/logo-three.webp" alt="Stackly Logo">
+                </a>
+                <button type="button" class="sidebar-close-btn" id="closeSidebarBtn" title="Close Sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- User Info Card -->
+            <div class="sidebar-user-card">
+                <div class="user-avatar" id="sidebarUserAvatar">A</div>
+                <div class="user-meta">
+                    <div class="user-name" id="sidebarUserName">Eleanor Vance</div>
+                    <span class="user-role-badge" id="sidebarUserRoleBadge">Admin</span>
+                </div>
+            </div>
+
+            <!-- Role Nav Container: 3 distinct role sidebars, 10 items each -->
+            <div class="sidebar-nav-container">
+
+                <!-- 1. ADMIN SIDEBAR (10 ITEMS) -->
+                <div class="role-nav-group active" id="navGroupAdmin" data-role="Admin">
+                    <div class="sidebar-nav-label">Admin Management</div>
+                    <ul class="sidebar-nav-list">
+                        <li class="sidebar-nav-item">
+                            <a href="#admin-overview" class="sidebar-nav-link active" data-tab="admin-overview">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Executive Overview</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#admin-batches" class="sidebar-nav-link" data-tab="admin-batches">
+                                <i class="fas fa-wine-bottle"></i>
+                                <span>Certified Milk Batches</span>
+                                <span class="sidebar-badge">Today</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#admin-revenue" class="sidebar-nav-link" data-tab="admin-revenue">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                                <span>Revenue &amp; Invoices</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#admin-customers" class="sidebar-nav-link" data-tab="admin-customers">
+                                <i class="fas fa-users"></i>
+                                <span>Customer Directory</span>
+                                <span class="sidebar-badge">684</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#admin-herd" class="sidebar-nav-link" data-tab="admin-herd">
+                                <i class="fas fa-hippo"></i>
+                                <span>Herd Master Registry</span>
+                                <span class="sidebar-badge">142</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#admin-logistics" class="sidebar-nav-link" data-tab="admin-logistics">
+                                <i class="fas fa-truck-moving"></i>
+                                <span>Fleet &amp; Logistics</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#admin-compliance" class="sidebar-nav-link" data-tab="admin-compliance">
+                                <i class="fas fa-certificate"></i>
+                                <span>Lab Compliance &amp; Tests</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#admin-staff" class="sidebar-nav-link" data-tab="admin-staff">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Farm Staff &amp; Shifts</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#admin-inventory" class="sidebar-nav-link" data-tab="admin-inventory">
+                                <i class="fas fa-boxes"></i>
+                                <span>Bottles &amp; Inventory</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#admin-settings" class="sidebar-nav-link" data-tab="admin-settings">
+                                <i class="fas fa-sliders-h"></i>
+                                <span>Farmstead Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2. FARMER SIDEBAR (10 ITEMS) -->
+                <div class="role-nav-group" id="navGroupFarmer" data-role="Farmer">
+                    <div class="sidebar-nav-label">Herdsman Operations</div>
+                    <ul class="sidebar-nav-list">
+                        <li class="sidebar-nav-item">
+                            <a href="#farmer-overview" class="sidebar-nav-link" data-tab="farmer-overview">
+                                <i class="fas fa-tractor"></i>
+                                <span>Herdsman Field Overview</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#farmer-health" class="sidebar-nav-link" data-tab="farmer-health">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Cow Health &amp; Veterinary</span>
+                                <span class="sidebar-badge">Live</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#farmer-milking" class="sidebar-nav-link" data-tab="farmer-milking">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Parlor Telemetry &amp; Milking</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#farmer-pastures" class="sidebar-nav-link" data-tab="farmer-pastures">
+                                <i class="fas fa-seedling"></i>
+                                <span>Pastures &amp; Paddocks</span>
+                                <span class="sidebar-badge">Pad #4</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#farmer-feed" class="sidebar-nav-link" data-tab="farmer-feed">
+                                <i class="fas fa-warehouse"></i>
+                                <span>Organic Feed &amp; Silage</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#farmer-calves" class="sidebar-nav-link" data-tab="farmer-calves">
+                                <i class="fas fa-baby"></i>
+                                <span>Calf Nursery &amp; Weaning</span>
+                                <span class="sidebar-badge">14 Calves</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#farmer-barns" class="sidebar-nav-link" data-tab="farmer-barns">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Barn Climate &amp; Sensors</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#farmer-machinery" class="sidebar-nav-link" data-tab="farmer-machinery">
+                                <i class="fas fa-cogs"></i>
+                                <span>Tractors &amp; Machinery</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#farmer-soil" class="sidebar-nav-link" data-tab="farmer-soil">
+                                <i class="fas fa-globe-americas"></i>
+                                <span>Field Soil &amp; Agronomy</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#farmer-shiftlog" class="sidebar-nav-link" data-tab="farmer-shiftlog">
+                                <i class="fas fa-clipboard-list"></i>
+                                <span>Daily Shift Log &amp; Notes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 3. CUSTOMER SIDEBAR (10 ITEMS) -->
+                <div class="role-nav-group" id="navGroupCustomer" data-role="Customer">
+                    <div class="sidebar-nav-label">Member Portal</div>
+                    <ul class="sidebar-nav-list">
+                        <li class="sidebar-nav-item">
+                            <a href="#customer-overview" class="sidebar-nav-link" data-tab="customer-overview">
+                                <i class="fas fa-home"></i>
+                                <span>Member Portal Overview</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#customer-subscriptions" class="sidebar-nav-link" data-tab="customer-subscriptions">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Doorstep Subscriptions</span>
+                                <span class="sidebar-badge">Active</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#customer-orders" class="sidebar-nav-link" data-tab="customer-orders">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>Orders &amp; Live Tracking</span>
+                                <span class="sidebar-badge">Transit</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#customer-bottles" class="sidebar-nav-link" data-tab="customer-bottles">
+                                <i class="fas fa-recycle"></i>
+                                <span>Glass Bottle Returns</span>
+                                <span class="sidebar-badge">$12 Credit</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#customer-shop" class="sidebar-nav-link" data-tab="customer-shop">
+                                <i class="fas fa-store"></i>
+                                <span>Reserve Farmstead Shop</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#customer-preferences" class="sidebar-nav-link" data-tab="customer-preferences">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Delivery Address &amp; Notes</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#customer-billing" class="sidebar-nav-link" data-tab="customer-billing">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Billing &amp; Invoices</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#customer-rewards" class="sidebar-nav-link" data-tab="customer-rewards">
+                                <i class="fas fa-award"></i>
+                                <span>Milking Club &amp; Rewards</span>
+                                <span class="sidebar-badge">450 Pts</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#customer-tours" class="sidebar-nav-link" data-tab="customer-tours">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Book Farm Visits &amp; Tours</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#customer-profile" class="sidebar-nav-link" data-tab="customer-profile">
+                                <i class="fas fa-user-cog"></i>
+                                <span>Profile &amp; Preferences</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Sidebar Footer (Logout only) -->
+            <div class="sidebar-footer">
+                <button type="button" class="sidebar-action-btn logout-btn" id="logoutBtn" title="Sign Out">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- ==================================================================
+             Main Content: Topbar & 30 Dedicated Page Views inside dashboard.html
+             ================================================================== -->
+        <main class="dashboard-main">
+            <!-- Topbar Sticky Header -->
+            <header class="dashboard-topbar">
+                <div class="topbar-left">
+                    <button type="button" class="mobile-menu-toggle-btn" id="mobileMenuToggleBtn" title="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="dashboard.html" class="dashboard-mobile-topbar-logo" title="Stackly Dashboard">
+                        <img src="images/logo.webp" alt="Stackly Logo">
+                    </a>
+                    <div class="dashboard-page-title">
+                        <h3 id="currentRoleHeaderTitle">Admin Farmstead Command</h3>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- Dashboard Dynamic Content: All 30 pages inside dashboard.html -->
+            <div class="dashboard-content-wrapper">
+
+                <!-- ##############################################################
+                     ADMIN PAGES (10 DISTINCT PAGES)
+                     ############################################################## -->
+
+                <!-- 1. Admin Overview -->
+                <section class="dashboard-tab-page active" id="page-admin-overview">
+                    <div class="role-welcome-banner">
+                        <div class="welcome-text">
+                            <h2>Welcome back, <span class="welcome-user-name">saravanan</span>!</h2>
+                            <p>Executive Farmstead Command — Real-time analytics for herd health, milk harvest batches, revenues, and distribution fleet.</p>
+                        </div>
+                        <div class="welcome-action-btns">
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold">
+                                <i class="fas fa-plus-circle"></i> Create Milk Batch
+                            </button>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="color:#ffffff; border-color: rgba(255,255,255,0.4);">
+                                <i class="fas fa-file-export"></i> Export Executive Report
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="stat-cards-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon gold"><i class="fas fa-glass-whiskey"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Daily Milk Harvest</div>
+                                <div class="stat-value">1,940 L</div>
+                                <div class="stat-meta"><i class="fas fa-arrow-up"></i> +4.5% vs yesterday</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Monthly Farm Revenue</div>
+                                <div class="stat-value">$148,250</div>
+                                <div class="stat-meta"><i class="fas fa-arrow-up"></i> +12.8% YoY</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon brown"><i class="fas fa-users"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Active Subscriptions</div>
+                                <div class="stat-value">684 Homes</div>
+                                <div class="stat-meta"><i class="fas fa-check"></i> 99.2% retention</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon blue"><i class="fas fa-certificate"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Lab Quality Score</div>
+                                <div class="stat-value">99.8%</div>
+                                <div class="stat-meta"><i class="fas fa-award"></i> Grade-A Certified</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid-two-col">
+                        <div class="dashboard-panel">
+                            <div class="panel-header">
+                                <h4>Today's Certified Dairy Batches</h4>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold" style="padding: 6px 14px; font-size: 12px;">
+                                    <i class="fas fa-sync"></i> Refresh Batches
+                                </button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="custom-db-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Batch Code</th>
+                                            <th>Product</th>
+                                            <th>Volume</th>
+                                            <th>Fat %</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><strong>#HF-4091</strong></td><td>A2 Organic Whole Milk</td><td>620 L</td><td>4.8%</td><td><span class="badge-status success">Bottled</span></td></tr>
+                                        <tr><td><strong>#HF-4092</strong></td><td>Slow-Cultured Butter</td><td>180 Kg</td><td>84.5%</td><td><span class="badge-status success">Ready</span></td></tr>
+                                        <tr><td><strong>#HF-4093</strong></td><td>Raw Jersey Cream</td><td>240 L</td><td>48.0%</td><td><span class="badge-status warning">Pasteurizing</span></td></tr>
+                                        <tr><td><strong>#HF-4094</strong></td><td>Artisan Smoked Gouda</td><td>95 Wheels</td><td>N/A</td><td><span class="badge-status info">Aging (Cave 2)</span></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-panel">
+                            <div class="panel-header">
+                                <h4>Executive Farm Telemetry</h4>
+                                <span class="badge-status success">All Systems Green</span>
+                            </div>
+                            <div style="font-size: 13px; line-height: 1.9;">
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Solar Hay Drying Barn:</span><strong>Online (100%)</strong>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Returnable Glass Bottle Fleet:</span><strong>4,120 in Circulation</strong>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Refrigerated Delivery Vans:</span><strong>4 Active Routes</strong>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Milk Cold Storage Tank:</span><strong>34°F (Optimal)</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px;">
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width: 100%; justify-content: center;">
+                                    <i class="fas fa-sliders-h"></i> Run Telemetry Diagnostics
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Admin Batches -->
+                <section class="dashboard-tab-page" id="page-admin-batches">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Certified Dairy Batches &amp; Pasteurization Logs</h4>
+                            <div style="display:flex; gap:10px;">
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-plus"></i> New Batch Log</button>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-outline"><i class="fas fa-filter"></i> Filter</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Batch ID</th>
+                                        <th>Milk Type</th>
+                                        <th>Volume</th>
+                                        <th>Fat / Protein</th>
+                                        <th>Pasteurization Method</th>
+                                        <th>Inspector</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>#HF-B901</strong></td>
+                                        <td>A2/A2 Jersey Golden Milk</td>
+                                        <td>740 Liters</td>
+                                        <td>4.9% / 3.8%</td>
+                                        <td>Low-Temp Vat (145°F, 30m)</td>
+                                        <td>Dr. Thomas Wright</td>
+                                        <td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 10px; font-size:11px;">Inspect</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#HF-B902</strong></td>
+                                        <td>Raw Pasture-Grass Heavy Cream</td>
+                                        <td>310 Liters</td>
+                                        <td>49.2% / 2.1%</td>
+                                        <td>Gentle Centrifuge Separation</td>
+                                        <td>Sarah Mitchell</td>
+                                        <td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 10px; font-size:11px;">Inspect</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#HF-B903</strong></td>
+                                        <td>Clover Meadow Cultured Butter</td>
+                                        <td>220 Kilograms</td>
+                                        <td>85.2% Butterfat</td>
+                                        <td>Cold Slow Churn (48 hr culture)</td>
+                                        <td>Master Butterman Leo</td>
+                                        <td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 10px; font-size:11px;">Inspect</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#HF-B904</strong></td>
+                                        <td>Raw Milk Clothbound Cheddar</td>
+                                        <td>140 Wheels</td>
+                                        <td>Whole Raw Milk</td>
+                                        <td>Aged 18 Months Cave Aging</td>
+                                        <td>Cheesemaker Clara</td>
+                                        <td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 10px; font-size:11px;">Inspect</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Admin Revenue -->
+                <section class="dashboard-tab-page" id="page-admin-revenue">
+                    <div class="db-grid-3">
+                        <div class="db-item-card">
+                            <div class="db-item-card-title">Doorstep Subscriptions</div>
+                            <div style="font-size:24px; font-weight:700; color:var(--db-primary); margin:8px 0;">$89,420</div>
+                            <div style="font-size:12px; color:#2e7d32;"><i class="fas fa-arrow-up"></i> +8.4% monthly recurring revenue</div>
+                        </div>
+                        <div class="db-item-card">
+                            <div class="db-item-card-title">Artisanal Wholesale &amp; Grocery</div>
+                            <div style="font-size:24px; font-weight:700; color:var(--db-primary); margin:8px 0;">$42,180</div>
+                            <div style="font-size:12px; color:#2e7d32;"><i class="fas fa-arrow-up"></i> 14 specialty grocers stocked</div>
+                        </div>
+                        <div class="db-item-card">
+                            <div class="db-item-card-title">Farmstead Store &amp; Tours</div>
+                            <div style="font-size:24px; font-weight:700; color:var(--db-primary); margin:8px 0;">$16,650</div>
+                            <div style="font-size:12px; color:#7e7164;"><i class="fas fa-check"></i> On-site visitors &amp; workshops</div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Farmstead Commercial Invoices</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-file-invoice"></i> Create New Invoice</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice #</th>
+                                        <th>Client / Account</th>
+                                        <th>Issue Date</th>
+                                        <th>Amount</th>
+                                        <th>Payment Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>#INV-7801</strong></td>
+                                        <td>Greenville Organic Co-Op</td>
+                                        <td>Oct 10, 2026</td>
+                                        <td>$4,850.00</td>
+                                        <td><span class="badge-status success">Paid</span></td>
+                                        <td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">PDF</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#INV-7802</strong></td>
+                                        <td>Heritage French Bistro Group</td>
+                                        <td>Oct 08, 2026</td>
+                                        <td>$2,340.00</td>
+                                        <td><span class="badge-status warning">Net-15 Pending</span></td>
+                                        <td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">PDF</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#INV-7803</strong></td>
+                                        <td>Maple Valley Artisan Bakery</td>
+                                        <td>Oct 05, 2026</td>
+                                        <td>$1,780.00</td>
+                                        <td><span class="badge-status success">Paid</span></td>
+                                        <td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">PDF</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Admin Customers -->
+                <section class="dashboard-tab-page" id="page-admin-customers">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Active Household Subscriptions &amp; Customer Accounts</h4>
+                            <div style="display:flex; gap:10px;">
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-user-plus"></i> Enroll Member</button>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-outline"><i class="fas fa-file-excel"></i> Export CSV</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subscriber</th>
+                                        <th>Email Address</th>
+                                        <th>Delivery Zone</th>
+                                        <th>Plan Details</th>
+                                        <th>Monthly Quota</th>
+                                        <th>Status</th>
+                                        <th>Manage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Charlotte Adams</strong></td>
+                                        <td>charlotte@greenville.net</td>
+                                        <td>Zone 1 - Downtown</td>
+                                        <td>Heritage Family Bundle</td>
+                                        <td>6 Quarts / wk</td>
+                                        <td><span class="badge-status success">Active</span></td>
+                                        <td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Edit</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>David Henderson</strong></td>
+                                        <td>david.h@valleymail.com</td>
+                                        <td>Zone 3 - East Ridge</td>
+                                        <td>Pasture Whole Milk Only</td>
+                                        <td>4 Quarts / wk</td>
+                                        <td><span class="badge-status success">Active</span></td>
+                                        <td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Edit</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Emily Richardson</strong></td>
+                                        <td>emily.rich@oakmail.org</td>
+                                        <td>Zone 2 - North Creek</td>
+                                        <td>Artisan Butter &amp; Cheese Box</td>
+                                        <td>Bi-Weekly Box</td>
+                                        <td><span class="badge-status warning">Paused</span></td>
+                                        <td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Edit</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. Admin Herd -->
+                <section class="dashboard-tab-page" id="page-admin-herd">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Master Cattle Pedigree &amp; Pasture Asset Registry (142 Cows)</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-plus"></i> Register New Cow</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ear Tag</th>
+                                        <th>Name &amp; Pedigree</th>
+                                        <th>Breed</th>
+                                        <th>Birth Date</th>
+                                        <th>Lactation Stage</th>
+                                        <th>Daily Yield</th>
+                                        <th>Health Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>#J-104</strong></td><td>Bessie (Sire: Prince Royal)</td><td>Purebred Jersey</td><td>May 14, 2021</td><td>Stage 2 (Peak)</td><td>28.4 L</td><td><span class="badge-status success">100%</span></td></tr>
+                                    <tr><td><strong>#G-208</strong></td><td>Daisy (Sire: Golden Baron)</td><td>Guernsey Heritage</td><td>Nov 03, 2020</td><td>Stage 2 (Peak)</td><td>26.2 L</td><td><span class="badge-status success">98%</span></td></tr>
+                                    <tr><td><strong>#J-115</strong></td><td>Bella (Sire: Jersey Monarch)</td><td>Purebred Jersey</td><td>Feb 19, 2022</td><td>Stage 1 (Fresh)</td><td>24.8 L</td><td><span class="badge-status warning">Observation</span></td></tr>
+                                    <tr><td><strong>#J-122</strong></td><td>Rosie (Sire: Clover Duke)</td><td>Purebred Jersey</td><td>Apr 02, 2021</td><td>Stage 2 (Peak)</td><td>29.1 L</td><td><span class="badge-status success">100%</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. Admin Logistics -->
+                <section class="dashboard-tab-page" id="page-admin-logistics">
+                    <div class="db-grid-2">
+                        <div class="db-item-card">
+                            <div class="db-item-card-header">
+                                <h5 class="db-item-card-title">Van #01 - Downtown Greenville Route</h5>
+                                <span class="badge-status success">On Route</span>
+                            </div>
+                            <p style="font-size:13px; color:#7e7164; margin-bottom:8px;">Driver: Marcus Vance | Refrigeration: <strong>36.2°F</strong></p>
+                            <div class="db-progress-track"><div class="db-progress-bar green" style="width: 78%;"></div></div>
+                            <div style="font-size:12px; display:flex; justify-content:space-between; margin-top:4px;">
+                                <span>39 of 50 Deliveries Completed</span>
+                                <span>ETA: 2:15 PM</span>
+                            </div>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width:100%; margin-top:14px;"><i class="fas fa-map-marked-alt"></i> Live GPS Map</button>
+                        </div>
+
+                        <div class="db-item-card">
+                            <div class="db-item-card-header">
+                                <h5 class="db-item-card-title">Van #02 - North Pastures &amp; Oak Creek</h5>
+                                <span class="badge-status success">On Route</span>
+                            </div>
+                            <p style="font-size:13px; color:#7e7164; margin-bottom:8px;">Driver: Lucas Miller | Refrigeration: <strong>35.8°F</strong></p>
+                            <div class="db-progress-track"><div class="db-progress-bar" style="width: 55%;"></div></div>
+                            <div style="font-size:12px; display:flex; justify-content:space-between; margin-top:4px;">
+                                <span>24 of 44 Deliveries Completed</span>
+                                <span>ETA: 3:30 PM</span>
+                            </div>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width:100%; margin-top:14px;"><i class="fas fa-map-marked-alt"></i> Live GPS Map</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7. Admin Compliance -->
+                <section class="dashboard-tab-page" id="page-admin-compliance">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Dairy Lab Safety, Somatic Cell Count &amp; Grade-A Certification</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-file-upload"></i> Upload Lab Certificate</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Test Metric</th>
+                                        <th>Standard Allowed</th>
+                                        <th>Hancock Farm Result</th>
+                                        <th>Compliance Rating</th>
+                                        <th>Last Certified</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Somatic Cell Count (SCC)</strong></td><td>&lt; 400,000 / mL</td><td><strong>72,000 / mL</strong></td><td><span class="badge-status success">Superior Grade-A</span></td><td>Yesterday 4 PM</td></tr>
+                                    <tr><td><strong>Standard Plate Count (Bacteria)</strong></td><td>&lt; 20,000 CFU/mL</td><td><strong>1,800 CFU/mL</strong></td><td><span class="badge-status success">Ultra Pure</span></td><td>Yesterday 4 PM</td></tr>
+                                    <tr><td><strong>Antibiotic Drug Residue</strong></td><td>Zero Tolerance</td><td><strong>0.00% (Clean)</strong></td><td><span class="badge-status success">Certified Clean</span></td><td>Daily Screen</td></tr>
+                                    <tr><td><strong>Organic Soil Audit</strong></td><td>100% Organic Purity</td><td><strong>Certified USDA</strong></td><td><span class="badge-status success">Approved</span></td><td>Sep 2026</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 8. Admin Staff -->
+                <section class="dashboard-tab-page" id="page-admin-staff">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Farmstead Personnel, Shift Roster &amp; Payroll</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-plus"></i> Add Team Member</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Staff Member</th>
+                                        <th>Primary Role</th>
+                                        <th>Active Shift</th>
+                                        <th>Certified Specialization</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Robert Sterling</strong></td><td>Head Herdsman</td><td>Morning Shift (5 AM - 1 PM)</td><td>Master Cattle Geneticist</td><td><span class="badge-status success">On Duty</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Roster</button></td></tr>
+                                    <tr><td><strong>Clara Dupont</strong></td><td>Master Cheesemaker</td><td>Day Shift (8 AM - 4 PM)</td><td>Traditional Affinage</td><td><span class="badge-status success">On Duty</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Roster</button></td></tr>
+                                    <tr><td><strong>Dr. Thomas Wright</strong></td><td>Veterinary Doctor</td><td>On-Call &amp; Bi-Weekly Visits</td><td>Bovine Wellness &amp; Nutrition</td><td><span class="badge-status info">Standby</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Roster</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 9. Admin Inventory -->
+                <section class="dashboard-tab-page" id="page-admin-inventory">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Farmstead Packaging, Bottles &amp; Cold Storage Stock</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-shopping-cart"></i> Reorder Supplies</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Supply Item</th>
+                                        <th>In Circulation</th>
+                                        <th>Warehouse Storage</th>
+                                        <th>Reorder Threshold</th>
+                                        <th>Supply Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Heritage Glass Quart Bottles</strong></td><td>4,120 Bottles</td><td>1,280 Bottles</td><td>800 Units</td><td><span class="badge-status success">Ample Stock</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Restock</button></td></tr>
+                                    <tr><td><strong>Gold Embossed Metal Bottle Caps</strong></td><td>N/A</td><td>24,000 Units</td><td>5,000 Units</td><td><span class="badge-status success">Ample Stock</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Restock</button></td></tr>
+                                    <tr><td><strong>Insulated Porch Delivery Cooler Bags</strong></td><td>684 with Customers</td><td>95 in Warehouse</td><td>50 Units</td><td><span class="badge-status warning">Reorder Soon</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Restock</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 10. Admin Settings -->
+                <section class="dashboard-tab-page" id="page-admin-settings">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Farmstead System Configuration &amp; API Controls</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-save"></i> Save All Changes</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 db-form-group">
+                                <label class="db-form-label">Farmstead Commercial Name</label>
+                                <input type="text" class="db-form-input" value="Hancock Heritage Organic Dairy &amp; Farmstead">
+                            </div>
+                            <div class="col-md-6 db-form-group">
+                                <label class="db-form-label">Executive Dispatch Email</label>
+                                <input type="email" class="db-form-input" value="manager@hancockfarm.org">
+                            </div>
+                            <div class="col-md-6 db-form-group">
+                                <label class="db-form-label">Automated Delivery SMS Gateway</label>
+                                <select class="db-form-select">
+                                    <option selected>Twilio Farmstead SMS (Active)</option>
+                                    <option>Local Carrier Gateway</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 db-form-group">
+                                <label class="db-form-label">Cold Storage Alarm Threshold (°F)</label>
+                                <input type="text" class="db-form-input" value="38.0°F (Trigger Siren &amp; SMS)">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- ##############################################################
+                     FARMER PAGES (10 DISTINCT PAGES)
+                     ############################################################## -->
+
+                <!-- 1. Farmer Overview -->
+                <section class="dashboard-tab-page" id="page-farmer-overview">
+                    <div class="role-welcome-banner">
+                        <div class="welcome-text">
+                            <h2>Welcome back, <span class="welcome-user-name">saravanan</span>!</h2>
+                            <p>Herdsman &amp; Field Operations — Daily milking telemetry, rotation grazing paddocks, pasture herd wellness, and ration logs.</p>
+                        </div>
+                        <div class="welcome-action-btns">
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold">
+                                <i class="fas fa-clipboard-check"></i> Log Milking Session
+                            </button>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="color:#ffffff; border-color: rgba(255,255,255,0.4);">
+                                <i class="fas fa-bell"></i> Broadcast Field Notice
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="stat-cards-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon gold"><i class="fas fa-hippo"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Pasture Herd Size</div>
+                                <div class="stat-value">142 Cows</div>
+                                <div class="stat-meta"><i class="fas fa-heart"></i> 100% Healthy Herd</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon brown"><i class="fas fa-clock"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Morning Milking</div>
+                                <div class="stat-value">1,020 L</div>
+                                <div class="stat-meta"><i class="fas fa-check"></i> Finished 6:30 AM</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green"><i class="fas fa-leaf"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Clover Forage Height</div>
+                                <div class="stat-value">9.4 in</div>
+                                <div class="stat-meta"><i class="fas fa-arrow-up"></i> Optimal Pasture Grazing</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon blue"><i class="fas fa-tint"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Soil Moisture Content</div>
+                                <div class="stat-value">34%</div>
+                                <div class="stat-meta"><i class="fas fa-sun"></i> Perfect Drainage</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid-two-col">
+                        <div class="dashboard-panel">
+                            <div class="panel-header">
+                                <h4>Cattle Health &amp; Daily Milking Activity</h4>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold" style="padding:6px 14px; font-size:12px;">
+                                    <i class="fas fa-plus"></i> Add Cow Log
+                                </button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="custom-db-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Cow ID</th>
+                                            <th>Breed</th>
+                                            <th>Milk Yield</th>
+                                            <th>Health Status</th>
+                                            <th>Next Vet Check</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><strong>#J-104 (Bessie)</strong></td><td>Purebred Jersey</td><td>28.4 L / day</td><td><span class="badge-status success">Excellent</span></td><td>Oct 24, 2026</td></tr>
+                                        <tr><td><strong>#G-208 (Daisy)</strong></td><td>Guernsey Heritage</td><td>26.2 L / day</td><td><span class="badge-status success">Excellent</span></td><td>Oct 28, 2026</td></tr>
+                                        <tr><td><strong>#J-115 (Bella)</strong></td><td>Purebred Jersey</td><td>24.8 L / day</td><td><span class="badge-status warning">Observation</span></td><td>Tomorrow</td></tr>
+                                        <tr><td><strong>#J-122 (Rosie)</strong></td><td>Purebred Jersey</td><td>29.1 L / day</td><td><span class="badge-status success">Peak Yield</span></td><td>Nov 02, 2026</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-panel">
+                            <div class="panel-header">
+                                <h4>Pasture Grazing &amp; Soil Telemetry</h4>
+                                <span class="badge-status success">Paddock #4 Active</span>
+                            </div>
+                            <div style="font-size: 13px; line-height: 1.9;">
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Current Grazing Sector:</span><strong>North Meadow #4</strong>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Next Pasture Rotation:</span><strong>Thursday, 8:00 AM</strong>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Fermented Clover Silage:</span><strong>18 Tons (Plentiful)</strong>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Parlor Robotic System:</span><strong>Operational (99.8%)</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top:20px;">
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width:100%; justify-content:center;">
+                                    <i class="fas fa-calendar-check"></i> View Full Rotation Schedule
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Farmer Health -->
+                <section class="dashboard-tab-page" id="page-farmer-health">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Herdsman Veterinary &amp; Herd Wellness Records</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-notes-medical"></i> Schedule Vet Visit</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Tag #</th>
+                                        <th>Cow Name</th>
+                                        <th>Ruminating Index</th>
+                                        <th>Hoof Condition</th>
+                                        <th>Last Vaccination</th>
+                                        <th>Notes</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>#J-104</strong></td><td>Bessie</td><td>520 min/day (Optimal)</td><td>Trimmed Aug 2026</td><td>Brucellosis &amp; BVD</td><td>Calm temperament</td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Record</button></td></tr>
+                                    <tr><td><strong>#G-208</strong></td><td>Daisy</td><td>498 min/day (Optimal)</td><td>Trimmed Aug 2026</td><td>Complete Booster</td><td>Eating clover avidly</td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Record</button></td></tr>
+                                    <tr><td><strong>#J-115</strong></td><td>Bella</td><td>410 min/day (Mild lower)</td><td>Left hind slight heat</td><td>Up to date</td><td>Mild swelling under watch</td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Record</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Farmer Milking -->
+                <section class="dashboard-tab-page" id="page-farmer-milking">
+                    <div class="db-grid-3">
+                        <div class="db-item-card">
+                            <div class="db-item-card-title">Parlor Vacuum Line</div>
+                            <div style="font-size:24px; font-weight:700; color:var(--db-primary); margin:8px 0;">42.2 kPa</div>
+                            <div style="font-size:12px; color:#2e7d32;"><i class="fas fa-check"></i> Gentle pulsation rate 60:40</div>
+                        </div>
+                        <div class="db-item-card">
+                            <div class="db-item-card-title">Average Flow Speed</div>
+                            <div style="font-size:24px; font-weight:700; color:var(--db-primary); margin:8px 0;">3.8 kg/min</div>
+                            <div style="font-size:12px; color:#2e7d32;"><i class="fas fa-check"></i> Rapid letdown time</div>
+                        </div>
+                        <div class="db-item-card">
+                            <div class="db-item-card-title">CIP Line Sanitation</div>
+                            <div style="font-size:24px; font-weight:700; color:var(--db-primary); margin:8px 0;">Cycle Passed</div>
+                            <div style="font-size:12px; color:#2e7d32;"><i class="fas fa-check"></i> 180°F wash completed</div>
+                        </div>
+                    </div>
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Automated Milking Stalls (Stall 1 - 8)</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-play"></i> Start Milking Session</button>
+                        </div>
+                        <p style="font-size:13px; color:#7e7164;">All automated rotary parlor stalls calibrated for pure Jersey herd genetics with automatic teat cleansing and gentle release sensors.</p>
+                    </div>
+                </section>
+
+                <!-- 4. Farmer Pastures -->
+                <section class="dashboard-tab-page" id="page-farmer-pastures">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Pasture Rotational Grazing System (6 Paddocks)</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-exchange-alt"></i> Rotate Grazing Sector</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Paddock</th>
+                                        <th>Forage Dominance</th>
+                                        <th>Grass Height</th>
+                                        <th>Resting Days</th>
+                                        <th>Solar Fence Voltage</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>North Meadow #1</strong></td><td>White Ladino Clover</td><td>10.2 in</td><td>22 Days Rested</td><td>8.4 kV</td><td><span class="badge-status success">Ready for Grazing</span></td></tr>
+                                    <tr><td><strong>North Meadow #2</strong></td><td>Perennial Ryegrass</td><td>8.6 in</td><td>18 Days Rested</td><td>8.3 kV</td><td><span class="badge-status success">Ready</span></td></tr>
+                                    <tr><td><strong>North Meadow #3</strong></td><td>Timothy &amp; Birdsfoot Trefoil</td><td>5.1 in</td><td>6 Days Rested</td><td>8.4 kV</td><td><span class="badge-status warning">Regrowing</span></td></tr>
+                                    <tr><td><strong>North Meadow #4</strong></td><td>Rich Orchard Grass &amp; Clover</td><td>9.4 in</td><td>Currently Active</td><td>8.5 kV</td><td><span class="badge-status info">Herd Grazing Now</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. Farmer Feed -->
+                <section class="dashboard-tab-page" id="page-farmer-feed">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Organic Winter Silage &amp; Mineral Rations</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-plus"></i> Log Feed Mix</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Silo Storage</th>
+                                        <th>Feed Type</th>
+                                        <th>Available Tonnage</th>
+                                        <th>Moisture %</th>
+                                        <th>Daily TMR Ration</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Bunker Silo A</strong></td><td>Fermented Organic Clover Silage</td><td>18.4 Tons</td><td>58%</td><td>14 kg / cow</td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Ration</button></td></tr>
+                                    <tr><td><strong>Dry Barn Hay Loft</strong></td><td>Sun-Cured Certified Alfalfa Hay</td><td>24.0 Tons</td><td>12%</td><td>6 kg / cow</td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Ration</button></td></tr>
+                                    <tr><td><strong>Mineral Shed</strong></td><td>Organic Sea Kelp &amp; Himalayan Salt</td><td>3.2 Tons</td><td>Dry Block</td><td>Free Choice</td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Ration</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. Farmer Calves -->
+                <section class="dashboard-tab-page" id="page-farmer-calves">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Calf Nursery &amp; Weaning Progress (14 Calves)</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-baby"></i> Register Newborn Calf</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Calf Tag</th>
+                                        <th>Dam (Mother)</th>
+                                        <th>Birth Date</th>
+                                        <th>Weight</th>
+                                        <th>Daily Gain</th>
+                                        <th>Feed Stage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>#C-401</strong></td><td>Bessie (#J-104)</td><td>Sep 12, 2026</td><td>110 lbs</td><td>+1.8 lbs/day</td><td><span class="badge-status success">Fresh Milk &amp; Hay</span></td></tr>
+                                    <tr><td><strong>#C-402</strong></td><td>Daisy (#G-208)</td><td>Sep 20, 2026</td><td>95 lbs</td><td>+1.7 lbs/day</td><td><span class="badge-status success">Fresh Milk &amp; Hay</span></td></tr>
+                                    <tr><td><strong>#C-403</strong></td><td>Rosie (#J-122)</td><td>Oct 01, 2026</td><td>74 lbs</td><td>+1.9 lbs/day</td><td><span class="badge-status info">Colostrum Transition</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7. Farmer Barns -->
+                <section class="dashboard-tab-page" id="page-farmer-barns">
+                    <div class="db-grid-2">
+                        <div class="db-item-card">
+                            <div class="db-item-card-header">
+                                <h5 class="db-item-card-title">Barn A (Milking Parlor &amp; Stalls)</h5>
+                                <span class="badge-status success">Optimal</span>
+                            </div>
+                            <div style="font-size:13px; line-height:1.9;">
+                                <div>Temperature: <strong>64°F</strong> (Ideal for Bovine Comfort)</div>
+                                <div>Relative Humidity: <strong>52%</strong></div>
+                                <div>Exhaust Fans: <strong>Running at 60% variable speed</strong></div>
+                            </div>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width:100%; margin-top:14px;"><i class="fas fa-fan"></i> Override Barn Controls</button>
+                        </div>
+
+                        <div class="db-item-card">
+                            <div class="db-item-card-header">
+                                <h5 class="db-item-card-title">Barn B (Free-Stall Loafing &amp; Hay Loft)</h5>
+                                <span class="badge-status success">Optimal</span>
+                            </div>
+                            <div style="font-size:13px; line-height:1.9;">
+                                <div>Temperature: <strong>62°F</strong></div>
+                                <div>Fresh Sand Bedding: <strong>Groomed this morning</strong></div>
+                                <div>Solar Hay Ventilation: <strong>Active (Solar Powered)</strong></div>
+                            </div>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width:100%; margin-top:14px;"><i class="fas fa-fan"></i> Override Barn Controls</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 8. Farmer Machinery -->
+                <section class="dashboard-tab-page" id="page-farmer-machinery">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Farmstead Tractor &amp; Machinery Fleet</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-wrench"></i> Log Maintenance</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Equipment</th>
+                                        <th>Model</th>
+                                        <th>Engine Hours</th>
+                                        <th>Fuel Level</th>
+                                        <th>Maintenance Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Primary Utility Tractor</strong></td><td>John Deere 6120M</td><td>1,420 hrs</td><td>85% Bio-Diesel</td><td><span class="badge-status success">Service Due in 80 hrs</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Service</button></td></tr>
+                                    <tr><td><strong>Hay Round Baler</strong></td><td>New Holland Roll-Belt</td><td>320 hrs</td><td>N/A (PTO)</td><td><span class="badge-status success">Greased &amp; Ready</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Service</button></td></tr>
+                                    <tr><td><strong>Automated Silage Feeder</strong></td><td>Lely Vector Shuttle</td><td>2,890 hrs</td><td>Electric (Solar)</td><td><span class="badge-status success">Operational</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Service</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 9. Farmer Soil -->
+                <section class="dashboard-tab-page" id="page-farmer-soil">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Pasture Agronomy, Soil Health &amp; Regenerative Carbon</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-vial"></i> Take Soil Sample</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Field Area</th>
+                                        <th>Soil pH</th>
+                                        <th>Organic Matter %</th>
+                                        <th>Earthworm Density</th>
+                                        <th>Biological Activity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Upper Meadow (East)</strong></td><td>6.6 (Balanced)</td><td>6.8% (Exceptional)</td><td>28 worms / sq.ft</td><td><span class="badge-status success">Regenerative Peak</span></td></tr>
+                                    <tr><td><strong>Lower River Flats</strong></td><td>6.4 (Balanced)</td><td>7.2% (Exceptional)</td><td>34 worms / sq.ft</td><td><span class="badge-status success">High Nitrogen Fixing</span></td></tr>
+                                    <tr><td><strong>Hillside Clover Pasture</strong></td><td>6.5 (Balanced)</td><td>6.4%</td><td>25 worms / sq.ft</td><td><span class="badge-status success">Optimal Rhizobia</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 10. Farmer Shiftlog -->
+                <section class="dashboard-tab-page" id="page-farmer-shiftlog">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Herdsman Daily Shift Log &amp; Notes</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-edit"></i> Write Today's Note</button>
+                        </div>
+                        <div style="font-size:13.5px; line-height:1.8;">
+                            <div style="border-left:3px solid var(--db-accent); padding-left:14px; margin-bottom:18px;">
+                                <strong>Today, 6:45 AM - Robert Sterling (Head Herdsman):</strong><br>
+                                "Morning milking completed smoothly. Bessie (#J-104) and Rosie (#J-122) had record yields today. Paddock #4 gate secured. Temperature is pleasant at 62°F with clear skies."
+                            </div>
+                            <div style="border-left:3px solid #2e7d32; padding-left:14px; margin-bottom:18px;">
+                                <strong>Yesterday, 5:15 PM - Clara Dupont:</strong><br>
+                                "Evening vat processing started. Heavy cream separated for tomorrow's butter churning. Cold storage holding steady at 34°F."
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- ##############################################################
+                     CUSTOMER PAGES (10 DISTINCT PAGES)
+                     ############################################################## -->
+
+                <!-- 1. Customer Overview -->
+                <section class="dashboard-tab-page" id="page-customer-overview">
+                    <div class="role-welcome-banner">
+                        <div class="welcome-text">
+                            <h2>Welcome back, <span class="welcome-user-name">saravanan</span>!</h2>
+                            <p>Member Farmstead Portal — Manage your doorstep fresh dairy deliveries, returnable glass bottles, and artisan farmstead cheeses.</p>
+                        </div>
+                        <div class="welcome-action-btns">
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold">
+                                <i class="fas fa-plus-circle"></i> Add Weekly Item
+                            </button>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="color:#ffffff; border-color: rgba(255,255,255,0.4);">
+                                <i class="fas fa-pause-circle"></i> Skip Next Week
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="stat-cards-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon gold"><i class="fas fa-truck"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Next Delivery</div>
+                                <div class="stat-value">Tomorrow</div>
+                                <div class="stat-meta"><i class="fas fa-clock"></i> 7:00 AM – 9:00 AM Window</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon brown"><i class="fas fa-wine-bottle"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Bottle Return Credits</div>
+                                <div class="stat-value">$12.00</div>
+                                <div class="stat-meta"><i class="fas fa-recycle"></i> 8 bottles credited</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green"><i class="fas fa-star"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Loyalty Reward Pts</div>
+                                <div class="stat-value">450 Pts</div>
+                                <div class="stat-meta"><i class="fas fa-gift"></i> Redeemable for Cheese</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon blue"><i class="fas fa-shopping-basket"></i></div>
+                            <div class="stat-details">
+                                <div class="stat-label">Active Plan Quarts</div>
+                                <div class="stat-value">4 Quarts</div>
+                                <div class="stat-meta"><i class="fas fa-check"></i> Bi-Weekly Whole Milk</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid-two-col">
+                        <div class="dashboard-panel">
+                            <div class="panel-header">
+                                <h4>My Doorstep Deliveries &amp; Basket</h4>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold" style="padding:6px 14px; font-size:12px;">
+                                    <i class="fas fa-pencil-alt"></i> Customize Basket
+                                </button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="custom-db-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Order #</th>
+                                            <th>Item Details</th>
+                                            <th>Delivery Day</th>
+                                            <th>Total</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><strong>#ORD-8821</strong></td><td>4x Whole Pasture Milk + 1x Whipped Honey Butter</td><td>Wednesday</td><td>$34.00</td><td><span class="badge-status success">Packed for Dispatch</span></td></tr>
+                                        <tr><td><strong>#ORD-8760</strong></td><td>Artisanal Cheese &amp; Butter Box</td><td>Last Friday</td><td>$54.00</td><td><span class="badge-status success">Delivered</span></td></tr>
+                                        <tr><td><strong>#ORD-8692</strong></td><td>4x Glass Milk Quarts (Return Exchange)</td><td>Last Tuesday</td><td>$24.00</td><td><span class="badge-status success">Delivered</span></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-panel">
+                            <div class="panel-header">
+                                <h4>Farmstead Membership Perks</h4>
+                                <span class="badge-status success">Gold Member</span>
+                            </div>
+                            <div style="font-size: 13px; line-height: 1.9;">
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Insulated Porch Delivery Bag:</span><strong>Active &amp; Linked</strong>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Returnable Glass Bottle Balance:</span><strong>6 bottles at home</strong>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Registered Delivery Address:</span><strong>587 Greenville Ave</strong>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span>Next Auto-Renewal Date:</span><strong>Nov 01, 2026</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top:20px;">
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width:100%; justify-content:center;">
+                                    <i class="fas fa-map-marker-alt"></i> Update Delivery Notes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Customer Subscriptions -->
+                <section class="dashboard-tab-page" id="page-customer-subscriptions">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>My Active Recurring Dairy Subscriptions</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-plus"></i> Add New Regular Item</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Dairy Item</th>
+                                        <th>Frequency</th>
+                                        <th>Quantity</th>
+                                        <th>Price Each</th>
+                                        <th>Delivery Schedule</th>
+                                        <th>Status</th>
+                                        <th>Manage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Heritage Pasture Whole Milk (Glass Quart)</strong></td><td>Twice Weekly</td><td>2 Bottles</td><td>$4.50</td><td>Monday &amp; Thursday</td><td><span class="badge-status success">Active</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Modify</button></td></tr>
+                                    <tr><td><strong>Slow-Cultured Sea Salt Butter (8 oz)</strong></td><td>Weekly</td><td>1 Tub</td><td>$7.00</td><td>Every Wednesday</td><td><span class="badge-status success">Active</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Modify</button></td></tr>
+                                    <tr><td><strong>Raw Jersey Heavy Cream (Pint)</strong></td><td>Bi-Weekly</td><td>1 Pint</td><td>$6.50</td><td>Alternate Fridays</td><td><span class="badge-status success">Active</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Modify</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Customer Orders -->
+                <section class="dashboard-tab-page" id="page-customer-orders">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Doorstep Deliveries &amp; Live Tracking</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-search-location"></i> Live Van Tracking</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Delivery Date</th>
+                                        <th>Items Delivered</th>
+                                        <th>Total Billed</th>
+                                        <th>Driver Route</th>
+                                        <th>Receipt</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>#ORD-8821</strong></td><td>Tomorrow (Oct 13)</td><td>4x Milk + 1x Butter</td><td>$34.00</td><td><span class="badge-status info">Van #01 - Morning Drop</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">View</button></td></tr>
+                                    <tr><td><strong>#ORD-8760</strong></td><td>Oct 06, 2026</td><td>Cheese &amp; Butter Box</td><td>$54.00</td><td><span class="badge-status success">Delivered to Porch</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Receipt</button></td></tr>
+                                    <tr><td><strong>#ORD-8692</strong></td><td>Sep 29, 2026</td><td>4x Milk Quarts</td><td>$24.00</td><td><span class="badge-status success">Delivered to Porch</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Receipt</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Customer Bottles -->
+                <section class="dashboard-tab-page" id="page-customer-bottles">
+                    <div class="db-grid-2">
+                        <div class="db-item-card">
+                            <div class="db-item-card-header">
+                                <h5 class="db-item-card-title">Glass Bottle Deposit Balance</h5>
+                                <span class="badge-status success">Credits Ready</span>
+                            </div>
+                            <div style="font-size:32px; font-weight:700; color:var(--db-primary); margin:8px 0;">$12.00</div>
+                            <p style="font-size:13px; color:#7e7164;">You have <strong>6 returnable glass bottles</strong> at your home. Leave them rinsed in your porch cooler bag on delivery morning!</p>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold" style="width:100%; margin-top:14px;"><i class="fas fa-recycle"></i> Request Extra Porch Pickup</button>
+                        </div>
+
+                        <div class="db-item-card">
+                            <div class="db-item-card-header">
+                                <h5 class="db-item-card-title">Lifetime Bottle Recycling Impact</h5>
+                                <span class="badge-status success">Eco Champion</span>
+                            </div>
+                            <div style="font-size:32px; font-weight:700; color:#2e7d32; margin:8px 0;">38 Bottles Saved</div>
+                            <p style="font-size:13px; color:#7e7164;">By choosing heritage glass bottles, you kept 38 single-use plastic jugs out of local landfills!</p>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width:100%; margin-top:14px;"><i class="fas fa-gift"></i> Redeem Deposit to Card</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. Customer Shop -->
+                <section class="dashboard-tab-page" id="page-customer-shop">
+                    <div class="panel-header" style="background:#fff; padding:18px 24px; border-radius:12px; border:1px solid var(--db-border); margin-bottom:20px;">
+                        <h4>Farmstead Reserve Cheese &amp; Creamery Store</h4>
+                        <span style="font-size:12px; color:#7e7164;">Add artisan specialty items directly to your next doorstep delivery</span>
+                    </div>
+
+                    <div class="db-shop-grid">
+                        <div class="db-shop-card">
+                            <div class="db-shop-card-body">
+                                <h5 style="font-family:'Playfair Display',serif; font-size:17px; margin-bottom:6px;">18-Month Aged Farmhouse Cheddar</h5>
+                                <p style="font-size:12.5px; color:#7e7164; flex:1;">Clothbound raw milk cheddar aged in our limestone aging caves. Sharp and rich with crystalline crunch.</p>
+                                <div class="db-shop-card-price">$16.50 <span style="font-size:12px; font-weight:400; color:#7e7164;">/ 8 oz wedge</span></div>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-plus"></i> Add to Next Delivery</button>
+                            </div>
+                        </div>
+
+                        <div class="db-shop-card">
+                            <div class="db-shop-card-body">
+                                <h5 style="font-family:'Playfair Display',serif; font-size:17px; margin-bottom:6px;">Truffle-Infused Gouda</h5>
+                                <p style="font-size:12.5px; color:#7e7164; flex:1;">Creamy whole Jersey milk gouda laced with fragrant black Italian truffles and aged for 9 months.</p>
+                                <div class="db-shop-card-price">$19.00 <span style="font-size:12px; font-weight:400; color:#7e7164;">/ 8 oz wedge</span></div>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-plus"></i> Add to Next Delivery</button>
+                            </div>
+                        </div>
+
+                        <div class="db-shop-card">
+                            <div class="db-shop-card-body">
+                                <h5 style="font-family:'Playfair Display',serif; font-size:17px; margin-bottom:6px;">Whipped Wildflower Honey Butter</h5>
+                                <p style="font-size:12.5px; color:#7e7164; flex:1;">Slow-churned pasture cream blended with raw clover honey harvested from our perimeter hives.</p>
+                                <div class="db-shop-card-price">$8.50 <span style="font-size:12px; font-weight:400; color:#7e7164;">/ 6 oz tub</span></div>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-plus"></i> Add to Next Delivery</button>
+                            </div>
+                        </div>
+
+                        <div class="db-shop-card">
+                            <div class="db-shop-card-body">
+                                <h5 style="font-family:'Playfair Display',serif; font-size:17px; margin-bottom:6px;">Heritage Clotted Cream</h5>
+                                <p style="font-size:12.5px; color:#7e7164; flex:1;">Traditional English-style thick crusted clotted cream made exclusively from Guernsey high-butterfat milk.</p>
+                                <div class="db-shop-card-price">$11.00 <span style="font-size:12px; font-weight:400; color:#7e7164;">/ 7 oz jar</span></div>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-plus"></i> Add to Next Delivery</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. Customer Preferences -->
+                <section class="dashboard-tab-page" id="page-customer-preferences">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Porch Delivery Instructions &amp; Cooler Location</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-save"></i> Save Delivery Instructions</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 db-form-group">
+                                <label class="db-form-label">Porch Drop Address</label>
+                                <input type="text" class="db-form-input" value="587 Greenville Ave, Apt / Suite 4B">
+                            </div>
+                            <div class="col-md-6 db-form-group">
+                                <label class="db-form-label">Gate Access / Ring Code</label>
+                                <input type="text" class="db-form-input" value="#4092 (Keypad on left column)">
+                            </div>
+                            <div class="col-12 db-form-group">
+                                <label class="db-form-label">Special Driver Instructions</label>
+                                <textarea class="db-form-input" rows="3">Please place bottles inside the dark green insulated Hancock Farm cooler box next to the front planter. If temperature exceeds 75°F, please leave extra cold pack.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7. Customer Billing -->
+                <section class="dashboard-tab-page" id="page-customer-billing">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Saved Payment Methods &amp; Monthly Statements</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-credit-card"></i> Add New Card</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>Card Brand</th>
+                                        <th>Card Number</th>
+                                        <th>Expires</th>
+                                        <th>Billing Cycle</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Visa Signature</strong></td><td>•••• •••• •••• 4242</td><td>08 / 2028</td><td>1st of every month</td><td><span class="badge-status success">Default Method</span></td><td><button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="padding:4px 8px; font-size:11px;">Update</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 8. Customer Rewards -->
+                <section class="dashboard-tab-page" id="page-customer-rewards">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Milking Club Loyalty Status: 450 Reward Points</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-gift"></i> Redeem Points</button>
+                        </div>
+                        <div style="margin:20px 0;">
+                            <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:600; margin-bottom:6px;">
+                                <span>Gold Pasture Tier</span>
+                                <span>50 points to Platinum Tier (500 pts)</span>
+                            </div>
+                            <div class="db-progress-track"><div class="db-progress-bar green" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="db-grid-3" style="margin-top:25px;">
+                            <div class="db-item-card">
+                                <h6>Free 8oz Clotted Cream</h6>
+                                <p style="font-size:12px; color:#7e7164;">Requires 200 Points</p>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width:100%; font-size:12px;">Redeem Now</button>
+                            </div>
+                            <div class="db-item-card">
+                                <h6>VIP Cheese Cave Tour Pass</h6>
+                                <p style="font-size:12px; color:#7e7164;">Requires 400 Points</p>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width:100%; font-size:12px;">Redeem Now</button>
+                            </div>
+                            <div class="db-item-card">
+                                <h6>Handcrafted Wooden Milk Crate</h6>
+                                <p style="font-size:12px; color:#7e7164;">Requires 600 Points</p>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-outline" style="width:100%; font-size:12px;">Locked (Need 150 pts)</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 9. Customer Tours -->
+                <section class="dashboard-tab-page" id="page-customer-tours">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>Book Farmstead Pasture Tours &amp; Experiences</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-calendar-plus"></i> Book Visit</button>
+                        </div>
+                        <div class="db-grid-2">
+                            <div class="db-item-card">
+                                <h5 style="font-family:'Playfair Display',serif;">Weekend Family Pasture Walk &amp; Petting</h5>
+                                <p style="font-size:13px; color:#7e7164;">Meet our gentle purebred Jersey cows in North Meadow, learn about organic rotation grazing, and bottle-feed sweet nursery calves.</p>
+                                <div style="font-size:13px; font-weight:600; margin-bottom:12px;">Saturdays &amp; Sundays | 10:00 AM &amp; 2:00 PM</div>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold" style="width:100%;">Book Tour Slot ($15 / person)</button>
+                            </div>
+                            <div class="db-item-card">
+                                <h5 style="font-family:'Playfair Display',serif;">Traditional Butter Churning &amp; Cheese Tasting</h5>
+                                <p style="font-size:13px; color:#7e7164;">Hands-on workshop with Master Cheesemaker Clara. Churn your own salted butter in antique wooden churns and sample cave-aged wheels.</p>
+                                <div style="font-size:13px; font-weight:600; margin-bottom:12px;">Every Friday | 4:00 PM – 6:00 PM</div>
+                                <button type="button" class="dashboard-btn-404 dashboard-btn-gold" style="width:100%;">Book Workshop ($35 / person)</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 10. Customer Profile -->
+                <section class="dashboard-tab-page" id="page-customer-profile">
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h4>My Profile &amp; Notification Preferences</h4>
+                            <button type="button" class="dashboard-btn-404 dashboard-btn-gold"><i class="fas fa-save"></i> Update Profile</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 db-form-group">
+                                <label class="db-form-label">Full Name</label>
+                                <input type="text" class="db-form-input" id="custProfileName" value="Eleanor Vance">
+                            </div>
+                            <div class="col-md-6 db-form-group">
+                                <label class="db-form-label">Email Address</label>
+                                <input type="email" class="db-form-input" id="custProfileEmail" value="eleanor.vance@example.com">
+                            </div>
+                            <div class="col-md-6 db-form-group">
+                                <label class="db-form-label">Mobile Phone (for delivery SMS)</label>
+                                <input type="tel" class="db-form-input" value="(555) 234-8901">
+                            </div>
+                            <div class="col-md-6 db-form-group">
+                                <label class="db-form-label">Delivery Notification Preference</label>
+                                <select class="db-form-select">
+                                    <option selected>SMS Text &amp; Email on Drop-off</option>
+                                    <option>Email Only</option>
+                                    <option>SMS Text Only</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+    </div>
+
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function() {
+    // 1. Get logged in user from localStorage
+    var savedUser = localStorage.getItem('hancock_user');
+    var currentUser = savedUser ? JSON.parse(savedUser) : null;
+
+    if (!currentUser) {
+        currentUser = {
+            email: 'admin@hancockfarm.org',
+            name: 'saravanan',
+            role: 'Admin',
+            isLoggedIn: true
+        };
+        localStorage.setItem('hancock_user', JSON.stringify(currentUser));
+    }
+
+    // Role titles lookup
+    var roleTitles = {
+        'Admin': 'Admin Farmstead Command',
+        'Farmer': 'Herdsman & Field Portal',
+        'Customer': 'Customer Farmstead Portal'
+    };
+
+    // Role default tabs
+    var roleDefaultTabs = {
+        'Admin': 'admin-overview',
+        'Farmer': 'farmer-overview',
+        'Customer': 'customer-overview'
+    };
+
+    // Function to set role and its distinct sidebar
+    function setActiveRole(role) {
+        // Format display name from login/register
+        var rawName = currentUser.name || (currentUser.email ? currentUser.email.split('@')[0] : 'Member');
+        var displayName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+
+        // Update user badge in sidebar & welcome banners
+        var initial = displayName.charAt(0).toUpperCase();
+        $('#sidebarUserAvatar').text(initial);
+        $('#sidebarUserName').text(displayName);
+        $('#sidebarUserRoleBadge').text(role);
+        $('.welcome-user-name').text(displayName);
+        $('#currentRoleHeaderTitle').text(roleTitles[role] || (role + ' Portal'));
+
+        // Toggle the correct sidebar navigation group (10 items per role)
+        $('.role-nav-group').removeClass('active');
+        $('#navGroup' + role).addClass('active');
+
+        // Activate the first tab for this role
+        var defaultTab = roleDefaultTabs[role] || (role.toLowerCase() + '-overview');
+        switchTab(defaultTab);
+    }
+
+    // Function to switch active page tab
+    function switchTab(tabId) {
+        // Update active class on nav links
+        $('.sidebar-nav-link').removeClass('active');
+        $('.sidebar-nav-link[data-tab="' + tabId + '"]').addClass('active');
+
+        // Update active page section
+        $('.dashboard-tab-page').removeClass('active');
+        $('#page-' + tabId).addClass('active');
+
+        // Update title with tab's text if found
+        var activeLink = $('.sidebar-nav-link[data-tab="' + tabId + '"]');
+        if (activeLink.length) {
+            var tabText = activeLink.find('span:first').text();
+            $('#currentRoleHeaderTitle').text(tabText);
+        }
+
+        // Scroll main content to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Close mobile drawer if open
+        if ($(window).width() < 992) {
+            $('#dashboardSidebar').removeClass('open');
+            $('#sidebarBackdrop').removeClass('active');
+        }
+    }
+
+    // Initialize with user's role
+    setActiveRole(currentUser.role || 'Admin');
+
+    // Sidebar navigation click handler
+    $(document).on('click', '.sidebar-nav-link', function(e) {
+        e.preventDefault();
+        var tabId = $(this).attr('data-tab');
+        if (tabId) {
+            switchTab(tabId);
+        }
+    });
+
+
+    // Sidebar logo click: instead of navigating to index.html, go to the first sidebar item
+    $(document).on('click', '#sidebarLogoBtn, .sidebar-logo-link', function(e) {
+        e.preventDefault();
+        var defaultTab = roleDefaultTabs[currentUser.role || 'Admin'] || 'admin-overview';
+        switchTab(defaultTab);
+    });
+
+    // Mobile Sidebar Drawer Toggle
+    $('#mobileMenuToggleBtn').on('click', function(e) {
+        e.preventDefault();
+        $('#dashboardSidebar').addClass('open');
+        $('#sidebarBackdrop').addClass('active');
+    });
+
+    $('#closeSidebarBtn, #sidebarBackdrop').on('click', function() {
+        $('#dashboardSidebar').removeClass('open');
+        $('#sidebarBackdrop').removeClass('active');
+    });
+
+    // Logout button
+    $('#logoutBtn').on('click', function() {
+        localStorage.removeItem('hancock_user');
+        window.location.href = 'login.html';
+    });
+
+    // CRITICAL USER REQUIREMENT:
+    // "dashboard pages la ulla buttons click pana 404 page ponum"
+    // Every operational button, action button, or clickable trigger inside dashboard pages goes to 404.html!
+    $(document).on('click', '.dashboard-tab-page button, .dashboard-tab-page .btn, .dashboard-btn-404', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.href = '404.html';
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>404 - Page Not Found | Stackly</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- Responsive File -->
+<link href="css/responsive.css" rel="stylesheet">
+<!-- Color File -->
+<link href="css/color.css" rel="stylesheet">
+<!-- FontAwesome Icons -->
+<link href="css/fontawesome-all.css" rel="stylesheet">
+<!-- Standalone 404 Styles (No Nav, No Footer) -->
+<link href="css/custom-404.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="images/favicon.webp" type="image/x-icon">
+<link rel="icon" href="images/favicon.webp" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body class="standalone-404">
+
+    <!-- Preloader -->
+    <div class="loader-wrap">
+        <div class="preloader"><div class="preloader-close">Preloader Close</div></div>
+        <div class="layer layer-one"><span class="overlay"></span></div>
+        <div class="layer layer-two"><span class="overlay"></span></div>        
+        <div class="layer layer-three"><span class="overlay"></span></div>        
+    </div>
+
+    <!-- Standalone 404 Content Container (No Nav, No Footer) -->
+    <div class="standalone-404-container">
+        <!-- Brand Logo -->
+        <a href="index.html" class="standalone-404-logo" title="Back to Stackly Homepage">
+            <img src="images/logo.webp" alt="Stackly Logo">
+        </a>
+
+        <!-- Main 404 Card -->
+        <div class="standalone-404-card">
+            <!-- Icon Badge -->
+            <div class="standalone-404-icon">
+                <i class="fas fa-tractor"></i>
+            </div>
+
+            <!-- Big 404 Typography -->
+            <div class="standalone-404-number">404</div>
+
+            <!-- Heading & Message -->
+            <h1 class="standalone-404-title">Oops! This Page Wandered Off To The Pasture</h1>
+            <p class="standalone-404-desc">
+                The page or feature you were trying to access might have been moved, milked, or is currently grazing happily out in our organic green pastures. Don't worry, our herd is safe! Choose one of the options below to head back to the farm.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="standalone-404-btns">
+                <a href="index.html" class="standalone-btn standalone-btn-primary">
+                    <i class="fas fa-home"></i> Return to Home
+                </a>
+                <a href="dashboard.html" id="btnReturnDashboard" class="standalone-btn standalone-btn-secondary">
+                    <i class="fas fa-tachometer-alt"></i> Return to Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+$(document).ready(function() {
+    $('#btnReturnDashboard').on('click', function(e) {
+        e.preventDefault();
+        var user = localStorage.getItem('hancock_user');
+        if (user) {
+            window.location.href = 'dashboard.html';
+        } else {
+            window.location.href = 'login.html';
+        }
+    });
+});
+</script>
+
+</body>
+</html>
