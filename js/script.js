@@ -87,11 +87,9 @@
 			if (windowpos > 100) {
 				siteHeader.addClass('fixed-header');
 				sticky_header.addClass("animated slideInDown");
-				scrollLink.fadeIn(300);
 			} else {
 				siteHeader.removeClass('fixed-header');
 				sticky_header.removeClass("animated slideInDown");
-				scrollLink.fadeOut(300);
 			}
 		}
 	}
@@ -359,10 +357,37 @@
 	/////////////////////////////
 	
 	if ($('.theme_carousel').length) {
-			$(".theme_carousel").each(function (index) {
-			var $owlAttr = {},
-			$extraAttr = $(this).data("options");
-			$.extend($owlAttr, $extraAttr);
+		$(".theme_carousel").each(function (index) {
+			var $owlAttr = {
+				loop: true,
+				margin: 30,
+				autoHeight: false,
+				lazyLoad: true,
+				nav: true,
+				dots: true,
+				autoplay: true,
+				autoplayTimeout: 5000,
+				smartSpeed: 500,
+				responsive: {
+					0: { items: 1 },
+					576: { items: 2 },
+					768: { items: 2 },
+					992: { items: 3 },
+					1200: { items: 4 }
+				}
+			};
+			var $extraAttr = $(this).data("options");
+			if (typeof $extraAttr === 'string') {
+				try {
+					$extraAttr = JSON.parse($extraAttr);
+				} catch(e) {
+					console.warn('Invalid carousel data-options:', e);
+					$extraAttr = {};
+				}
+			}
+			if (typeof $extraAttr === 'object' && $extraAttr !== null) {
+				$.extend(true, $owlAttr, $extraAttr);
+			}
 			$(this).owlCarousel($owlAttr);
 		});
 	}
