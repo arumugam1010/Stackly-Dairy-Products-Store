@@ -65,7 +65,7 @@
                 <a href="index.html" class="standalone-btn standalone-btn-primary">
                     <i class="fas fa-home"></i> Return to Home
                 </a>
-                <a href="dashboard.html" id="btnReturnDashboard" class="standalone-btn standalone-btn-secondary">
+                <a href="dashboard.html" id="btnReturnDashboard" class="standalone-btn standalone-btn-secondary" style="display: none;">
                     <i class="fas fa-tachometer-alt"></i> Return to Dashboard
                 </a>
             </div>
@@ -79,15 +79,25 @@
 <script src="js/script.js"></script>
 <script>
 $(document).ready(function() {
-    $('#btnReturnDashboard').on('click', function(e) {
-        e.preventDefault();
-        var user = localStorage.getItem('hancock_user');
-        if (user) {
-            window.location.href = 'dashboard.html';
-        } else {
-            window.location.href = 'login.html';
+    // Only show "Return to Dashboard" if user is logged in
+    var savedUser = localStorage.getItem('hancock_user');
+    var isLoggedIn = false;
+    if (savedUser) {
+        try {
+            var u = JSON.parse(savedUser);
+            if (u && (u.isLoggedIn === true || u.isLoggedIn === 'true')) {
+                isLoggedIn = true;
+            }
+        } catch (e) {
+            isLoggedIn = false;
         }
-    });
+    }
+
+    if (isLoggedIn) {
+        $('#btnReturnDashboard').css('display', 'inline-flex');
+    } else {
+        $('#btnReturnDashboard').hide();
+    }
 });
 </script>
 
